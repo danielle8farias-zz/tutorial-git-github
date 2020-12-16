@@ -46,3 +46,23 @@ body {
 .lista-indice li {
     font-family: 'Montserrat', sans-serif;
 }
+
+li a:link {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+li a:visited {
+    color: #b9daeb;
+    background-color: transparent;
+    text-decoration: dotted;
+}
+
+li a:hover {
+    color: #13293d;
+    background-color: #fff;
+    text-decoration: underline;
+}
+
