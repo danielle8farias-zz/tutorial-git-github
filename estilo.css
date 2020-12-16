@@ -46,20 +46,20 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-li a:link {
+a:link {
     color: #fff;
     background-color: transparent;
     text-decoration: none;
     transition: 0.3s;
 }
 
-li a:visited {
+a:visited {
     color: #b9daeb;
     background-color: transparent;
     text-decoration: dotted;
 }
 
-li a:hover {
+a:hover {
     color: #13293d;
     background-color: #fff;
     text-decoration: underline;
@@ -107,4 +107,27 @@ footer {
     font-family: 'Baloo 2', cursive;
     font-size: 400;
     text-align: center;
+}
+
+nav {
+    width: 900px;
+    background-color: #16324f;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 4px 4px #b9daeb;
+    display: inline-table;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Baloo 2', cursive;
+}
+
+.nav-esquerda {
+    float: left;
+}
+
+.nav-direita {
+    float: right;
 }
