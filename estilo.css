@@ -73,7 +73,11 @@ li a:hover {
     color: #fff;
     box-shadow: 4px 4px #b9daeb;
     font-family: 'Montserrat', sans-serif;
-    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
 }
 
 .caixa-texto p {
@@ -94,4 +98,13 @@ li a:hover {
 
 .observacao li {
     padding: 5px;
+}
+
+footer {
+    width: 900px;
+    box-sizing: border-box;
+    color: #16324f;
+    font-family: 'Baloo 2', cursive;
+    font-size: 400;
+    text-align: center;
 }
