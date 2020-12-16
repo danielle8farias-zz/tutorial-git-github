@@ -35,7 +35,6 @@ body {
     border-radius: 3px;
     color: #fff;
     box-shadow: 4px 4px #b9daeb;
-
 }
 
 .lista-indice ol {
@@ -66,3 +65,21 @@ li a:hover {
     text-decoration: underline;
 }
 
+.caixa-texto {
+    width: 900px;
+    background-color: #13293d;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 4px 4px #b9daeb;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+}
+
+.caixa-texto p {
+    padding-bottom: 5px;
+}
+
+.caixa-codigo {
+    font-family: ;
+}
