@@ -1,16 +1,46 @@
 body {
     background-image: url('img/technology-background.jpg');
-    background-size: cover;
+    background-size: contain;
     width: 100vw;
     height: 100vh;
 }
 
 .corpo-central {
-    background-color: #16324f;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.titulo {
+    width: 800px;
+    background-color: #16324f;
     box-sizing: border-box;
     border-radius: 3px;
     color: #fff;
+    box-shadow: 4px 4px #b9daeb;
+}
+
+.titulo h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 600;
+    text-align: center;
+}
+
+.lista-indice {
+    width: 800px;
+    background-color: #13293d;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #fff;
+    box-shadow: 4px 4px #b9daeb;
+
+}
+
+.lista-indice ol {
+    margin: 10px;
+    padding: 10px;
+}
+
+.lista-indice li {
+    font-family: 'Montserrat', sans-serif;
 }
