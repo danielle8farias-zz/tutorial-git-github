@@ -1,107 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <title>Instalação inicial no Linux</title>
-</head>
-<body>
-    <div class="corpo-central">
-        <div class="titulo">
-            <h1>>_ Instalando, configurando e inicializando o Git no Linux</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <meta name="keywords" content="git, linux, configuração, instalação, tutorial, init">
+        <title>Instalação inicial no Linux</title>
+    </head>
+    <body>
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>>_ Instalando, configurando e inicializando o Git no Linux</h1>
+            </div>
+            <article class="caixa-texto">
+                <p>
+                    Para instalar o Git no Linux, digite no terminal:
+                </p>
+                <code class="caixa-codigo">
+                    $ sudo apt install git
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>sudo</strong> é o comando que dá permissões de <strong>super usuário</strong> temporariamente; assim é possível fazer a instalação de programas.
+                    </li>
+                    <li>
+                        <strong>apt</strong> do inglês, <em>Advanced Package Tool</em>, em português, <strong>Ferramenta de Empacotamento Avançada</strong>; é a ferramenta que nos ajuda na instalação, atualização e desinstalação de programas, entre outras funções.
+                    </li>
+                    <li>
+                        <strong>install</strong> é o comando de instalar, indicando ao <strong>apt</strong> o que fazer.
+                    </li>
+                </ul>
+                <p>
+                    Verifique se a instalação foi feita corretamente digitando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git --version
+                </code>
+                <p>
+                    Você receberá o retorno da versão instalada.
+                </p>
+                <p>
+                    Antes de começar a usá-lo é preciso fazer as configurações iniciais. No terminal, digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git config --global user.name &lt;seu_nome_aqui&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        Digite seu nome sem os sinais de &lt; e  &gt;.
+                    </li>
+                </ul>
+                <p>
+                    Em seguida:
+                </p>
+                <code class="caixa-codigo">
+                    $ git config --global user.email &lt;seu@email.com&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        Digite seu email sem os sinais de &lt; e  &gt;.
+                    </li>
+                </ul>
+                <p>
+                    Agora, vamos configurar o editor padrão:
+                </p>
+                <code class="caixa-codigo">
+                    $ git config --global core.editor nano
+                </code>
+                <p>
+                    No meu caso, estou usando o <strong>nano</strong>, mas você pode utilizar outro de sua preferência.
+                </p>
+                <p>
+                    Para verificar as suas configurações, digite no terminal:
+                </p>
+                <code class="caixa-codigo">
+                    $ git config --list
+                </code>
+                <p>
+                    Caso queira que as configurações sejam feitas apenas no diretório (não global) indicado, basta retirar dos comandos a flag <strong>--global</strong>.
+                </p>
+                <p>
+                    Assim:
+                </p>
+                <code class="caixa-codigo">
+                    $ git config user.name &lt;seu_nome_aqui&gt;
+                </code>
+                <code class="caixa-codigo">
+                    $ git config user.email &lt;seu@email.com&gt;
+                </code>
+                <code class="caixa-codigo">
+                    $ git config core.editor nano
+                </code>
+                <p>
+                    Para inicializar o git no diretório desejado (caso ainda não o tenha feito), vá até o local onde você deseja fazer o controle de versionamento.
+                </p>
+                <code class="caixa-codigo">
+                    $ cd /home/seu_usuário/seu_repositório
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>cd</strong> do inglês, <em>change directory</em>; serve para mudar de diretório/pasta.
+                    </li>
+                </ul>
+                <p>
+                    e digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git init
+                </code>
+                <p>
+                    A partir de agora, os arquivos serão rastreados pelo <strong>Git</strong>.
+                </p>
+            </article>
         </div>
-        <article class="caixa-texto">
-            <p>
-                Para instalar o Git no Linux, digite no terminal:
-            </p>
-            <code class="caixa-codigo">
-                $ sudo apt install git
-            </code>
-            <ul class="observacao">
-                <li>
-                    <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
-                </li>
-                <li>
-                    <strong>sudo</strong> é o comando que dá permissões de <strong>super usuário</strong> temporariamente; assim é possível fazer a instalação de programas.
-                </li>
-                <li>
-                    <strong>apt</strong> do inglês, <em>Advanced Package Tool</em>, em português, <strong>Ferramenta de Empacotamento Avançada</strong>; é a ferramenta que nos ajuda na instalação, atualização e desinstalação de programas, entre outras funções.
-                </li>
-                <li>
-                    <strong>install</strong> é o comando de instalar, indicando ao <strong>apt</strong> o que fazer.
-                </li>
-            </ul>
-        </article>
-    </div>
-</body>
+        <footer>
+
+        </footer>
+    </body>
 </html>
-
-
-
-Verifique se a instalação foi feita corretamente digitando:
-
-```
-$ git --version
-```
-
-Você receberá o retorno da versão instalada.
-
-Antes de começar a usá-lo é preciso fazer as configurações iniciais. Assim,
-
-```
-$ git config --global user.name seu_nome_aqui
-```
-
-Insira seu nome no local marcado; *seu_nome_aqui*.
-
-Em seguida:
-
-```
-$ git config --global user.email seu@email.com
-```
-
-Insira seu email no local marcado; *seu@email.com*.
-
-Configurando o editor padrão:
-
-```
-$ git config --global core.editor nano
-```
-
-No meu caso, estou usando o **nano**.
-
-Para verificar as suas configurações:
-
-```
-$ git config --list
-```
-
-Caso queira que as configurações sejam feitas apenas no diretório (não global) indicado, basta retirar dos comandos a flag **--global**. Assim:
-
-```
-$ git config user.name seu_nome_aqui
-$ git config user.email seu@email.com
-$ git config core.editor nano
-```
-
-Para inicializar o git no diretório desejado (caso ainda não o tenha feito), vá até o local onde você deseja fazer o controle de versionamento.
-
-```
-$ cd /home/seu_usuário/seu_repositório
-```
-
-- o comando **cd** serve para mudar de diretório/pasta; em seguida digite o caminho até a pasta.
-
-e digite
-
-```
-$ git init
-```
-
-A partir de agora, os arquivos serão rastreados pelo **Git**.
-
-tags: git, linux, configuracao, instalacao

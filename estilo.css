@@ -85,6 +85,7 @@ li a:hover {
     background-color: #2c2c2c;
     color: #fff;
     padding: 5px;
+    display: block;
 }
 
 .observacao {
