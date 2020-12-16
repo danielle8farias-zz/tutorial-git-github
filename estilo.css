@@ -8,13 +8,13 @@ body {
 }
 
 .corpo-central {
-    width: 800px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .titulo {
-    width: 800px;
+    width: 900px;
     background-color: #16324f;
     box-sizing: border-box;
     border-radius: 3px;
