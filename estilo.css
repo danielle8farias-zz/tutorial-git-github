@@ -86,3 +86,11 @@ li a:hover {
     color: #fff;
     padding: 5px;
 }
+
+.observacao {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.observacao li {
+    padding: 5px;
+}
