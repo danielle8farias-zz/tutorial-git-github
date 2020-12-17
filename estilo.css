@@ -132,3 +132,9 @@ nav {
 .nav-direita {
     float: right;
 }
+
+img.fluxo-git {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
