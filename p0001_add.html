@@ -13,7 +13,7 @@
     <body>
         <div class="corpo-central">
             <div class="titulo">
-                <h1>>_ git add: Adicionando arquivos no Git</h1>
+                <h1>&gt;_ git add: Adicionando arquivos no Git</h1>
             </div>
             <article class="caixa-texto">
                 <h2>
@@ -54,7 +54,42 @@
                     </li>
                 </ul>
                 <img class="fluxo-git" src="img/p0001-0.png" alt="fluxo do git">
-
+                <h2>Git status</h2>
+                <p>
+                    Vamos supor que o diretório está vazio. Então vamos verificar o estado atual do <strong>git</strong>. Assim:
+                </p>
+                <code class="caixa-codigo">
+                    $ git status
+                </code>
+                <p>
+                    O retorno do terminal será algo semelhante a:
+                </p>
+                <img class="exemplo" src="img/p0001-1.png" alt="retorno do git status">
+                <p>
+                    Agora vamos criar dois arquivos nesse diretório:
+                </p>
+                <code class="caixa-codigo">
+                    $ touch index.html estilo.css
+                </code>
+                <ul class="observacao">
+                    <li>
+                        o comando <strong>touch</strong> serve para criar arquivos no Linux.
+                    </li>
+                </ul>
+                <p>
+                    Digitando novamente o comando <code class="caixa-codigo-inline">git status</code>, temos:
+                </p>
+                <img class="exemplo" src="img/p0001-2.png" alt="mostrando arquivos ainda não monitorados">
+                <p>
+                    Esses dois arquivos <strong>ainda não</strong> estão sendo monitorados pelo <strong>Git</strong>.
+                </p>
+                <p>
+                    No fluxo do Git, temos:
+                </p>
+                <img class="fluxo-git" src="img/p0001-3.png" alt="fluxo inicial do git">
+                <p>
+                    Como podemos perceber, esses dois arquivos ainda não receberam o <strong>commit</strong>. Por isso eles estão no <strong>working directory</strong>.
+                </p>
             </article>
         </div>
     </body>
@@ -62,38 +97,6 @@
 
 
 
-
-## Git status
-
-Vamos supor que o diretório está vazio. Então vamos verificar o estado atual do **git**. Assim:
-
-```
-$ git status
-```
-
-O retorno do terminal será algo semelhante a:
-
-![retorno git status](img/p0001-1.png)
-
-Agora vamos criar dois arquivos nesse diretório:
-
-```
-$ touch index.html estilo.css
-```
-
-- o comando **touch** serve para criar arquivos no Linux.
-
-Digitando novamente o comando ```git status```, temos:
-
-![arquivos ainda não monitorados](img/p0001-2.png)
-
-Esses dois arquivos ainda não estão sendo monitorados pelo **git**.
-
-No fluxo do git, temos:
-
-![fluxo inicial do git](img/p0001-3.png)
-
-Como podemos perceber, esses dois arquivos ainda não receberam o *commit*. Por isso eles estão no **working directory**.
 
 
 ## Git add

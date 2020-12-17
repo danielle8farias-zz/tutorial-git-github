@@ -133,8 +133,16 @@ nav {
     float: right;
 }
 
-img.fluxo-git {
+img.fluxo-git,
+img.exemplo {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.caixa-codigo-inline {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 3px;
 }
