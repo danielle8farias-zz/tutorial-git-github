@@ -38,12 +38,13 @@ body {
 }
 
 .lista-indice ol {
-    margin: 10px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .lista-indice li {
     font-family: 'Montserrat', sans-serif;
+    padding-bottom: 8px;
 }
 
 a:link {
