@@ -117,7 +117,9 @@ nav {
     border-radius: 3px;
     color: #fff;
     box-shadow: 4px 4px #b9daeb;
-    display: inline-table;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding-left: 55px;
     padding-right: 55px;
     padding-top: 5px;
@@ -126,11 +128,11 @@ nav {
 }
 
 .nav-esquerda {
-    float: left;
+    margin-right: 200px;
 }
 
 .nav-direita {
-    float: right;
+    margin-left: 200px;
 }
 
 img.fluxo-git,
