@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-        <meta name="keywords" content="git, linux, add, adicionando, tutorial">
+        <meta name="keywords" content="git, linux, add, adicionando, tutorial, init, status">
         <title>Git Add</title>
     </head>
     <body>
@@ -90,63 +90,65 @@
                 <p>
                     Como podemos perceber, esses dois arquivos ainda não receberam o <strong>commit</strong>. Por isso eles estão no <strong>working directory</strong>.
                 </p>
+                <h2>
+                    Git add
+                </h2>
+                <p>
+                    Para adicionar os dois arquivos, <strong>um de cada vez</strong>, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git add index.html
+                </code>
+                <code class="caixa-codigo">
+                    $ git add estilo.css
+                </code>
+                <p>
+                    Ou para adicionar ambos <strong>ao mesmo tempo</strong>,
+                </p>
+                <code class="caixa-codigo">
+                    $ git add index.html estilo.css
+                </code>
+                <p>
+                    Caso queira adicionar <strong>todos os arquivos de um diretório recursivamente</strong>; o que inclui seus subdiretórios e arquivos ou pastas ocultas,
+                </p>
+                <code class="caixa-codigo">
+                    $ git add .
+                </code>
+                <p>
+                    Para adicionar todos os arquivos de uma <strong>determinada extensão</strong>.
+                </p>
+                <code class="caixa-codigo">
+                    $ git add *.txt
+                </code>
+                <ul class="observacao">
+                    <li>
+                        supondo que a extensão desejada seja <strong>txt</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Após incluir nossos arquivos, vamos verificar novamente o estado do <strong>Git</strong>.
+                </p>
+                <ul class="observacao">
+                    <li>
+                        É recomendável usar sempre o <code class="caixa-codigo-inline">git status</code> após cada comando do git para saber onde se está.
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0001-4.png" alt="arquivos monitorados">
+                <p>
+                    Observando o <strong>fluxo do Git</strong>, temos:
+                </p>
+                <img class="fluxo-git" src="img/p0001-5.png" alt="arquivos no index">
+                <p>
+                    Aqui, estamos no <strong>index (staging area)</strong>; a <em>"sala de espera"</em> do Git.
+                </p>
+                <p>
+                    Abaixo um resumo das variações do comando <code class="caixa-codigo-inline">git add</code>:
+                </p>
+                <img class="exemplo" src="img/p0001-6.png" alt="tipos de git add">
+                <p>
+                    É a partir daqui que poderemos realizar o <strong>commit</strong>.
+                </p>
             </article>
         </div>
     </body>
 </html>
-
-
-
-
-
-## Git add
-
-Para adicionar os dois arquivos, **um de cada vez**, digite:
-
-```
-$ git add index.html
-```
-
-```
-$ git add estilo.css
-```
-
-Ou para adicionar ambos **ao mesmo tempo**,
-
-```
-$ git add index.html estilo.css
-```
-
-Caso queira adicionar **todos os arquivos de um diretório recursivamente**; o que inclui seus subdiretórios e arquivos ou pastas ocultas,
-
-```
-$ git add .
-```
-
-Para adicionar todos os arquivos de uma **determinada extensão**. 
-
-```
-$ git add *.txt
-```
-
-- supondo que a extensão desejada seja **txt**.
-
-Após incluir nossos arquivos, vamos verificar novamente o estado do **Git**.
-
-> É recomendável usar sempre o ```git status``` após cada comando do git para saber onde se está.
-
-![arquivos monitorados](img/p0001-4.png)
-
-Observando o **fluxo** do git, temos:
-
-![arquivos no index](img/p0001-5.png)
-
-Aqui, estamos no **index (staging area)**; a *"sala de espera"* do git.
-
-Abaixo um resumo das variações do comando ```git add```:
-
-![git add](img/p0001-6.png)
-
-É a partir daqui que poderemos realizar o **commit**.
-
-tags: git, init, add, status
