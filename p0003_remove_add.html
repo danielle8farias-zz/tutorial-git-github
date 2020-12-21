@@ -23,110 +23,120 @@
                     Temos no nosso diretório que está sendo monitorado pelo <strong>Git</strong> os seguintes arquivos:
                 </p>
                 <img class="exemplo" src="img/p0003-0.png" alt="arquivos monitorados">
-
+                <p>
+                    No <strong>fluxo</strong> do git, temos:
+                </p>
+                <img class="fluxo-git" src="img/p0003-1.png" alt="arquivos no index">
+                <p>
+                    Como podemos ver, ainda não temos <strong>commits</strong>.
+                </p>
+                <p>
+                    Vamos criar e adicionar ao <strong>index</strong> um terceiro arquivo:
+                </p>
+                <img class="exemplo" src="img/p0003-2.gif" alt="criando e adicionando terceiro arquivo">
+                <p>
+                    Observando o fluxo do <strong>Git</strong>:
+                </p>
+                <img class="fluxo-git" src="img/p0003-3.png" alt="novo arquivo no index">
+                <p>
+                    Vamos supor que adicionamos esse arquivo <em>estilo2.css</em> sem querer. <strong>Não era o que queríamos</strong>. Então devemos <strong>tirá-lo do index</strong>. Observe que o próprio terminal nos dá uma dica de como fazê-lo:
+                </p>
+                <img class="exemplo" src="img/p0003-4.png" alt="retorno do git status">
+                <p>
+                    Esse é exatamente o comando que vamos utilizar aqui.
+                </p>
+                <code class="caixa-codigo">
+                    $ git rm --cached estilo2.css
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                </ul>
+                <p>
+                    Utilizando o comando <code class="caixa-codigo-inline">git status</code>, temos:
+                </p>
+                <img class="exemplo" src="img/p0003-5.png" alt="arquivo retirado do index">
+                <p>
+                    No fluxo do <strong>Git</strong>, temos:
+                </p>
+                <img class="fluxo-git" src="img/p0003-6.png" alt="arquivo removido do index">
+                <p>
+                    Para retirar todos os arquivos, podemos usar o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git rm --cached -r *
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>-r</strong> de recursivo, ou seja, inclui subdiretórios, se houver.
+                    </li>
+                    <li>
+                        <strong>*</strong>, <em>asterisco</em>; todos os arquivos.
+                    </li>
+                </ul>
+                <h2>
+                    Remoção após o primeiro commit
+                </h2>
+                <p>
+                    Caso não seja o primeiro commit e você precise excluir um arquivo do <strong>index</strong>, utilize o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset HEAD &lt;arquivo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>reset</strong>; redefinir.
+                    </li>
+                    <li>
+                        <strong>HEAD</strong> é um ponteiro que normalmente aponta para o <strong>último commit</strong>.
+                    </li>
+                    <li>
+                        Escreva o nome do(s) arquivo(s) sem os sinais de &lt; e  &gt;.
+                    </li>
+                </ul>
+                <p>
+                    O que esse comando faz é uma cópia do <strong>head</strong> para o <strong>index</strong>; retirando o arquivo que estava no index antes.
+                </p>
+                <p>
+                    No nosso exemplo,
+                </p>
+                <img class="exemplo" src="img/p0003-7.png" alt="index a partir do segundo commit">
+                <img class="fluxo-git" src="img/p0003-8.png" alt="fluxo antes da remoção do arquivo do index">
+                <p>
+                    Usando o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset HEAD estilo2.css
+                </code>
+                <img class="exemplo" src="img/p0003-9.png" alt="depois do reset HEAD">
+                <p>
+                    Para <strong>retirar do index todos os arquivos</strong>, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset HEAD .
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>ponto</strong> é o diretório atual. Isso quer dizer que ele vai incluir <strong>todos os arquivos</strong> e subdiretórios que estão no <strong>index</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Adicionando dois arquivos ao index.
+                </p>
+                <img class="exemplo" src="img/p0003-10.gif" alt="criando dois arquivos e adicionando ao index">
+                <p>
+                    Mostrando os três arquivos que estão agora no index.
+                </p>
+                <img class="exemplo" src="img/p0003-11.png" alt="mais de um arquivo no index">
+                <p>
+                    Retirando todos os arquivos que estão no <strong>index</strong>.
+                </p>
+                <img class="exemplo" src="img/p0003-12.png" alt="reset head em mais de um arquivos">
             </article>
         </div>
     </body>
 </html>
-
-
-
-
-No **fluxo** do git, temos:
-
-![arquivos no index](img/p0003-1.png)
-
-Como podemos ver, ainda não temos **commits**.
-
-Vamos criar e adicionar ao **index** um terceiro arquivo:
-
-![criando e adicionando terceiro arquivo](img/p0003-2.gif)
-
-Observando o fluxo do **Git**:
-
-![novo arquivo no index](img/p0003-3.png)
-
-Vamos supor que adicionamos esse arquivo estilo2.css sem querer. **Não era o que queríamos**. Então devemos **tirá-lo do index**. Observe que o próprio terminal nos dá uma dica de como fazê-lo:
-
-![retorno do git status](img/p0003-4.png)
-
-Esse é exatamente o comando que vamos utilizar aqui.
-
-```
-$ git rm --cached estilo2.css
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-
-Utilizando o comando ```git status```, temos:
-
-![arquivo retirado do index](img/p0003-5.png)
-
-No fluxo do **Git**, temos:
-
-![arquivo removido do index](img/p0003-6.png)
-
-Para retirar todos os arquivos, podemos usar o comando
-
-```
-$ git rm --cached -r *
-```
-
-- **-r** de recursivo, ou seja, inclui subdiretórios, se houver.
-
-- __*__, *asterisco*; todos os arquivos.
-
-
-## Remoção após o primeiro commit
-
-Caso não seja o primeiro commit e você precise excluir um arquivo do **index**, utilize o comando:
-
-```
-$ git reset HEAD <arquivo>
-```
-
-- **reset**; redefinir.
-
-- **HEAD** é um ponteiro que normalmente aponta para o **último commit**.
-
-- digite o nome do arquivo sem os sinais **< >**.
-
-O que esse comando faz é uma cópia do **head** para o **index**; retirando o arquivo que estava no index antes.
-
-No nosso exemplo,
-
-![index a partir do segundo commit](img/p0003-7.png)
-
-![fluxo antes da remoção do arquivo do index](img/p0003-8.png)
-
-Usando o comando
-
-```
-$ git reset HEAD estilo2.css
-```
-
-![depois do reset HEAD](img/p0003-9.png)
-
-Para **retirar do index todos os arquivos**, digite:
-
-```
-$ git reset HEAD .
-```
-
-- **ponto** é o diretório atual. Isso quer dizer que ele vai incluir **todos os arquivos** e subdiretórios que estão no **index**.
-
-Exemplo:
-
-Adicionando dois arquivos ao index.
-
-![criando dois arquivos e adicionando ao index](img/p0003-10.gif)
-
-Mostrando os três arquivos que estão agora no index.
-
-![mais de um arquivo no index](img/p0003-11.png)
-
-Retirando todos os arquivos que estão no **index**.
-
-![reset head em mais de um arquivos](img/p0003-12.png)
-
-tags: 
