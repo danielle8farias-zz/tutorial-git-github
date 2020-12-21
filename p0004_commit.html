@@ -1,0 +1,42 @@
+# git commit: Enviando arquivos para o repositório Git
+
+
+Vamos supor que temos no nosso repositório a seguinte situação:
+
+Temos dois arquivos novos e vamos fazer o nosso primeiro **commit**.
+
+![arquivos monitorados](img/p0004-0.png)
+
+Enquanto temos no **fluxo** do git,
+
+![arquivos no index](img/p0004-1.png)
+
+Ao colocar os arquivos dentro no repositório, precisamos informar ao **Git** o **motivo** desses arquivos, com o comando:
+
+```
+$ git commit -m 'escreva sua mensagem aqui'
+```
+
+- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
+
+- pode-se usar aspas simples ou duplas para escrever a mensagem.
+
+No nosso exemplo, temos:
+
+```
+$ git commit -m 'commit inicial'
+```
+
+![primeiro commit](img/p0004-2.png)
+
+Conferindo o **estado** do **Git**, temos:
+
+![status limpo](img/p0004-3.png)
+
+E no fluxo,
+
+![fluxo commit do git](img/p0004-4.png)
+
+Esse conjunto de caracteres e números que aparece ao lado da palavra **commit** é a **chave (ou hash)** que identifica o próprio.
+
+tags: git, commit, add, status, tutorial
