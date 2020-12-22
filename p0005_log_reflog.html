@@ -12,64 +12,71 @@
         <title>git log/reflog</title>
     </head>
     <body>
-    
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>&gt;_ git log/reflog: Verificando o histórico do Git</h1>
+            </div>
+            <article class="caixa-texto">
+                <p>
+                    Para ver o histórico de commits do <strong>Git</strong>, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git log
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                </ul>
+                <p>
+                    E o retorno será todos os <strong>commits</strong> feitos até o momento.
+                </p>
+                <img class="exemplo" src="img/p0005-0.png" alt="mostrando todos os commits">
+                <p>
+                    Pressione <strong>[ENTER]</strong> quantas vezes forem necessárias para ver os outros commits (isso ocorre quando o número de commits é maior do que o espaço ocupado pelo terminal) e ao final, quando aparecer a palavra <strong>(END)</strong>, pressione a letra <strong>q</strong> para sair.
+                </p>
+                <img class="exemplo" src="img/p0005-1.png" alt="final da lista do histórico de commits">
+                <p>
+                    Caso queira ver esse histórico numa versão mais resumida, use a flag apresentada abaixo:
+                </p>
+                <code class="caixa-codigo">
+                    $ git log --oneline
+                </code>
+                <img class="exemplo" src="img/p0005-2.png" alt="usando a flag oneline">
+                <p>
+                    Caso queira ver apenas os 4 últimos <strong>commits</strong>,
+                </p>
+                <code class="caixa-codigo">
+                    $ git log -4
+                </code>
+                <img class="exemplo" src="img/p0005-3.png" alt="4 últimos commits">
+                <p>
+                    Você pode substituir o número 4 por outro número inteiro, conforme a necessidade.
+                </p>
+                <p>
+                    Também é possível fazer uma combinação desses comandos. Exemplo:
+                </p>
+                <p>
+                    Usando o git log em combinação com a flag oneline.    
+                </p>
+                <img class="exemplo" src="img/p0005-4.png" alt="usando o git log em combinação com a flag oneline">
+                <p>
+                    Para ver o histórico de tudo que foi feito (não apenas commits),
+                </p>
+                <code class="caixa-codigo">
+                    $ git reflog
+                </code>
+                <img class="exemplo" src="img/p0005-5.png" alt="usando o reflog">
+                <p>
+                    Esse comando é muito útil para usar com o <strong>reset</strong> quando você precisa recuperar algo que foi perdido por acidente, seja depois de um <strong>merge</strong> ou próprio <strong>reset</strong> problemático, algo que quebrou ou foi excluído e até mesmo recuperar um <strong>branch</strong> excluído. Ele é como uma máquina do tempo mais potente do que o <strong>log</strong>.
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset HEAD@{número_do_índice}
+                </code>
+                <p>
+                    Entretanto, o <strong>reflog</strong> tem 90 dias de prazo de validade padrão.
+                </p>
+            </article>
+        </div>
     </body>
 </html>
-
-# git log/reflog: Verificando o histórico do git
-
-Para ver o histórico de commits do **Git**, digite:
-
-```
-$ git log
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-
-E o retorno será todos os **commits** feitos até o momento.
-
-![mostrando todos os commits](img/p0005-0.png)
-
-Pressione [ENTER] quantas vezes sejam necessárias para ver os outros commits (isso ocorre quando o número de commits é maior do que o espaço ocupado pelo terminal) e ao final, quando aparecer a palavra **(END)**, pressione a letra **q** para sair.
-
-![final da lista do histórico de commits](img/p0005-1.png)
-
-Caso queira ver esse histórico numa versão mais resumida, use a flag apresentada abaixo:
-
-```
-$ git log --oneline
-```
-
-![usando a flag oneline](img/p0005-2.png)
-
-Caso queira ver apenas os 4 últimos **commits**,
-
-```
-$ git log -4
-```
-
-![4 últimos commits](img/p0005-3.png)
-
-Você pode substituir o número 4 por outro número inteiro, conforme a necessidade.
-
-Também é possível fazer uma combinação desses comandos. Exemplo:
-
-Usando o git log em combinação com a flag oneline.
-
-![usando o git log em combinação com a flag oneline](img/p0005-4.png)
-
-Para ver o histórico de tudo que foi feito (não apenas commits),
-
-```
-$ git reflog
-```
-
-![usando o reflog](img/p0005-5.png)
-
-Esse comando é muito útil para usar com o **reset** quando você precisa recuperar algo que foi perdido por acidente, seja depois de um **merge** ou próprio **reset** problemático, algo que quebrou ou foi excluído e até mesmo recuperar um **branch** excluído. Ele é como uma máquina do tempo mais potente do que o **log**.
-
-```
-$ git reset HEAD@{número_do_índice}
-```
-
-Entretanto, o **reflog** tem 90 dias de prazo de validade padrão.
