@@ -9,49 +9,57 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
         <meta name="keywords" content="git, commit, add, status, tutorial, linux">
         <title>git commit</title>
-        </head>
-        <body>
-        
+    </head>
+    <body>
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>&gt;_ git commit: Enviando arquivos para o repositório Git</h1>
+            </div>
+            <article class="caixa-texto">
+                <p>
+                    Vamos supor que temos no nosso repositório a seguinte situação:
+                </p>
+                <p>
+                    Temos dois arquivos novos e vamos fazer o nosso primeiro <strong>commit</strong>.
+                </p>
+                <img class="exemplo" src="img/p0004-0.png" alt="arquivos monitorados">
+                <p>
+                    Enquanto temos no <strong>fluxo</strong> do git,
+                </p>
+                <img class="fluxo-git" src="img/p0004-1.png" alt="arquivos no index">
+                <p>
+                    Ao colocar os arquivos dentro no repositório, precisamos informar ao <strong>Git</strong> o <strong>motivo</strong> desses arquivos, com o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit -m 'escreva sua mensagem aqui'
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        pode-se usar <strong>aspas simples ou duplas</strong> para escrever a mensagem.
+                    </li>
+                </ul>
+                <p>
+                    No nosso exemplo, temos:
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit -m 'commit inicial'
+                </code>
+                <img class="exemplo" src="img/p0004-2.png" alt="primeiro commit">
+                <p>
+                    Conferindo o <strong>estado do Git</strong>, temos:
+                </p>
+                <img class="exemplo" src="img/p0004-3.png" alt="status limpo">
+                <p>
+                    E no fluxo,
+                </p>
+                <img class="fluxo-git" src="img/p0004-4.png" alt="fluxo commit do git">
+                <p>
+                    Esse conjunto de caracteres e números que aparece ao lado da palavra <strong>commit</strong> é a <strong>chave (ou hash)</strong> que identifica o próprio.
+                </p>
+            </article>
+        </div>
     </body>
 </html>
-
-# git commit: Enviando arquivos para o repositório Git
-
-
-Vamos supor que temos no nosso repositório a seguinte situação:
-
-Temos dois arquivos novos e vamos fazer o nosso primeiro **commit**.
-
-![arquivos monitorados](img/p0004-0.png)
-
-Enquanto temos no **fluxo** do git,
-
-![arquivos no index](img/p0004-1.png)
-
-Ao colocar os arquivos dentro no repositório, precisamos informar ao **Git** o **motivo** desses arquivos, com o comando:
-
-```
-$ git commit -m 'escreva sua mensagem aqui'
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-
-- pode-se usar aspas simples ou duplas para escrever a mensagem.
-
-No nosso exemplo, temos:
-
-```
-$ git commit -m 'commit inicial'
-```
-
-![primeiro commit](img/p0004-2.png)
-
-Conferindo o **estado** do **Git**, temos:
-
-![status limpo](img/p0004-3.png)
-
-E no fluxo,
-
-![fluxo commit do git](img/p0004-4.png)
-
-Esse conjunto de caracteres e números que aparece ao lado da palavra **commit** é a **chave (ou hash)** que identifica o próprio.
