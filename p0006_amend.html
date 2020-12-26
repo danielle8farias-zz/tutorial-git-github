@@ -116,32 +116,50 @@
                     Usando <code class="caixa-codigo-inline">git log</code> novamente:
                 </p>
                 <img class="exemplo" src="img/p0006-7.png" alt="log de commits após a correção da adição de arquivos">
-
+                <h2>
+                    Pequenas alterações no arquivo
+                </h2>
+                <p>
+                    Caso você tenha acabado de fazer um <strong>commit</strong>, mas precisou fazer uma pequena alteração no arquivo logo em seguida, então digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git add &lt;nome_do_arquivo&gt;
+                </code>
+                <p>
+                    Para colocar as alterações no <strong>index</strong> e em seguida:
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit --amend --no-edit
+                </code>
+                <p>
+                    Agora seu último <strong>commit</strong> contém a alteração do arquivo.
+                </p>
+                <ul class="observacao">
+                    <li>
+                        Atenção: não usar esse comando com commits que já foram enviados para o repositório remoto.
+                    </li>
+                </ul>
             </article>
+            <nav>
+                <div class="nav-esquerda">
+                    <a href="p0005_log_reflog.html">
+                        &lt; anterior
+                    </a>
+                </div>
+                <div class="nav-centro">
+                    <a href="index.html">
+                        voltar ao índice
+                    </a>
+                </div>
+                <div class="nav-direita">
+                    <a href="#">
+                        próximo &gt;
+                    </a>
+                </div>
+            </nav>
+            <footer>
+                    by danielle8farias
+            </footer>
         </div>
     </body>
 </html>
-
-
-
-
-
-
-
-## Pequenas alterações no arquivo
-
-Caso você tenha acabado de fazer um **commit**, mas precisou fazer uma pequena alteração no arquivo logo em seguida, então digite:
-
-```
-$ git add <nome_do_arquivo>
-```
-
-Para colocar as alterações no **index** e em seguida:
-
-```
-$ git commit --amend --no-edit
-```
-
-Agora seu último **commit** contém a alteração do arquivo.
-
-**Atenção: não usar esse comando com commits que já foram enviados para o repositório remoto.**
