@@ -22,6 +22,76 @@
                 <p>
                     Vamos supor que adicionei dois arquivos com os seguintes commits:
                 </p>
+                <code class="caixa-codigo">
+                    $ git add index.html estilo.css
+                </code>
+                <code class="caixa-codigo">
+                    $ git commit -m 'adicionando arquivo html e css'
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>add</strong> para adicionar arquivos ao <strong>index</strong>.
+                    </li>
+                    <li>
+                        <strong>commit</strong>> é quem vai levar os arquivos do <strong>index</strong> para o <strong>repositório git</strong>.
+                    </li>
+                    <li>
+                        <strong>m</strong> indica que você irá escrever uma mensagem para registrar o <strong>commit</strong>.
+                    </li>
+                    <li>
+                        a mensagem do <strong>commit</strong> vem entre <strong>aspas simples ou duplas</strong>.
+                    </li>
+                </ul>
+                <p>
+                    E em seguida, adiciono mais outro, mas com o <strong>commit errado</strong>:
+                </p>
+                <code class="caixa-codigo">
+                    $ git add script.js
+                </code>
+                <code class="caixa-codigo">
+                    $ git commit -m 'script python'
+                </code>
+                <p>
+                    Como é possível constatar, escrevi errado o commit desse arquivo.
+                </p>
+                <p>
+                    Antes de consertá-lo, vamos dar uma olhada nos commit feitos até agora:
+                </p>
+                <code class="caixa-codigo">
+                    $ git log
+                </code>
+                <img class="exemplo" src="img/p0006-0.png" alt="verificando as chaves dos commits feitos">
+                <p>
+                    Perceba que cada um tem sua própria chave (a sequência de caracteres com letras e números ao lado da palavra commit).
+                </p>
+                <p>
+                    Vamos modificar o **último commit** com o seguinte comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit --amend -m 'adicionando script js'
+                </code>
+                <p>
+                    Agora, vamos usar utilizar o comando <code class="caixa-codigo-inline">git log</code> para ver novamente os commits:
+                </p>
+                <img class="exemplo" src="img/p0006-1.png" alt="commit corrigido">
+                <p>
+                    Observe que a chave do nosso último commit é diferente da anterior (antes da correção).
+                </p>
+                <p>
+                    Para entender melhor o que aconteceu, vamos usar o comando <code class="caixa-codigo-inline">$ git reflog</code>
+                </p>
+                <img class="exemplo" src="img/p0006-2.png" alt="registro reflog">
+                <p>
+                    Com ele podemos verificar o nosso commit errado e a sua correção.
+                </p>
+                <p>
+                    No <strong>fluxo</strong> do git, temos:
+                </p>
+                <img class="fluxo-git" src="img/p0006-3.png" alt="fluxo do git mostrando commit amend">
+
             </article>
         </div>
     </body>
@@ -29,59 +99,11 @@
 
 
 
-Vamos supor que adicionei dois arquivos com os seguintes commits:
 
-```
-$ git add index.html estilo.css
-$ git commit -m 'adicionando arquivo html e css'
-```
 
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- **add** para adicionar arquivos ao **index**.
-- **commit** é quem vai levar os arquivos do **index** para o **repositório git**.
-- **-m** indica que você irá escrever uma mensagem para registrar o **commit**.
-- a mensagem do **commit** vem entre **aspas simples ou duplas**.
 
-E em seguida, adiciono mais outro, mas com o **commit errado**:
 
-```
-$ git add script.js
-$ git commit -m 'script python'
-```
 
-Como é possível constatar, escrevi errado o commit desse arquivo.
-
-Antes de consertá-lo, vamos dar uma olhada nos commit feitos até agora:
-
-```
-$ git log
-```
-
-![verificando as chaves dos commits feitos](img/p0006-0.png)
- 
-Perceba que cada um tem sua própria chave (a sequência de caracteres com letras e números ao lado da palavra commit).
-
-Vamos modificar o **último commit** com o seguinte comando:
-
-```
-$ git commit --amend -m 'adicionando script js'
-```
-
-Agora, vamos usar utilizar o comando ```git log``` para ver novamente os commits:
-
-![commit corrigido](img/p0006-1.png)
-
-Observe que a chave do nosso último commit é diferente da anterior (antes da correção).
-
-Para entender melhor o que aconteceu, vamos o comando ```$ git reflog```
-
-![registro reflog](img/p0006-2.png)
-
-Com ele podemos verificar o nosso commit errado e a sua correção.
-
-No **fluxo** do git, temos:
-
-![fluxo do git mostrando commit amend](img/p0006-3.png)
 
 
 ## Arquivo esquecido
