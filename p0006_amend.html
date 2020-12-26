@@ -91,6 +91,31 @@
                     No <strong>fluxo</strong> do git, temos:
                 </p>
                 <img class="fluxo-git" src="img/p0006-3.png" alt="fluxo do git mostrando commit amend">
+                <h2>
+                    Arquivo esquecido
+                </h2>
+                <p>
+                    Outro problema que pode ocorrer, e que também é resolvido com o comando <strong>--amend</strong>, é de adicionar arquivos ao repositório, dar commit, mas ter faltado um arquivo que você queria que fizesse parte desse commit.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0006-4.gif" alt="esquecendo de adicionar um arquivo">
+                <p>
+                    No exemplo acima, esquecemos de adicionar o arquivo <strong>playstation.html</strong>.
+                </p>
+                <p>
+                    Usando o comando <code class="caixa-codigo-inline">git log</code>, temos:
+                </p>
+                <img class="exemplo" src="img/p0006-5.png" alt="log de commits antes da correção">
+                <p>
+                    Fazendo a correção:
+                </p>
+                <img class="exemplo" src="img/p0006-6.gif" alt="usando amend para inserir arquivo esquecido">
+                <p>
+                    Usando <code class="caixa-codigo-inline">git log</code> novamente:
+                </p>
+                <img class="exemplo" src="img/p0006-7.png" alt="log de commits após a correção da adição de arquivos">
 
             </article>
         </div>
@@ -101,32 +126,6 @@
 
 
 
-
-
-
-
-
-## Arquivo esquecido
-
-Outro problema que pode ocorrer, e que também é resolvido com o comando **--amend**, é de adicionar arquivos ao repositório, dar commit, mas ter faltado um arquivo que você queria que fizesse parte desse commit.
-
-Exemplo:
-
-![esquecendo de adicionar um arquivo](img/p0006-4.gif)
-
-No exemplo acima, esquecemos de adicionar o arquivo **playstation.html**.
-
-Usando o comando **git log**, temos:
-
-![log de commits antes da correção](img/p0006-5.png)
-
-Fazendo a correção:
-
-![usando amend para inserir arquivo esquecido](img/p0006-6.gif)
-
-Usando **git log** novamente:
-
-![log de commits após a correção da adição de arquivos](img/p0006-7.png)
 
 
 ## Pequenas alterações no arquivo
