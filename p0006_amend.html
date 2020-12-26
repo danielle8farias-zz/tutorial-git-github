@@ -3,17 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <meta name="keywords" content="git, log, commit, alteração, amend, tutorial, linux">
         <title>git amend</title>
     </head>
     <body>
-    
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>&gt;_ git amend: Corrigindo o último commit</h1>
+            </div>
+            <article class="caixa-texto">
+                <h2>
+                    Mensagem de commit errada
+                </h2>
+                <p>
+                    Vamos supor que adicionei dois arquivos com os seguintes commits:
+                </p>
+            </article>
+        </div>
     </body>
 </html>
 
-# git amend: Corrigindo o último commit
 
-
-## Mensagem de commit errada
 
 Vamos supor que adicionei dois arquivos com os seguintes commits:
 
@@ -110,5 +124,3 @@ $ git commit --amend --no-edit
 Agora seu último **commit** contém a alteração do arquivo.
 
 **Atenção: não usar esse comando com commits que já foram enviados para o repositório remoto.**
-
-tags: git, log, commit, alteração, amend, tutorial, linux
