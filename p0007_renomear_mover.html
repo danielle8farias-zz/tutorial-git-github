@@ -16,35 +16,42 @@
                 <h1>&gt;_ git mv: Renomeando ou movendo arquivos no Git</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    Para renomear um arquivo do repositório, basta digitar o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git mv &lt;nome_antigo&gt; &lt;nome_novo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        substitua o &lt;nome_antigo&gt; e &lt;nome_novo&gt; pelos nomes do arquivo e o novo nome que deseja dar a ele, sem os sinais <strong>&lt; &gt;</strong>
+                    </li>
+                </ul>
+                <p>
+                    Esse comando também é usado para mover arquivos do repositório.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <code class="caixa-codigo">
+                    $ git mv &lt;arquivo&gt; &lt;diretorio/&gt;
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Mudando o nome do arquivo <strong>nintendo64.html</strong> para <strong>n64.html</strong>.
+                </p>
+                <img class="exemplo" src="img/p0007-0.png" alt="mudando o nome do arquivo nintendo64.html">
+                <p>
+                    Movendo o arquivo <strong>estilo.css</strong> para o <strong>diretório css</strong>.
+                </p>
+                <img class="exemplo" src="img/p0007-1.png" alt="movendo o arquivo estilo.css">
             </article>
         </div>
     
     </body>
 </html>
-
-
-
-Para renomear um arquivo do repositório, basta digitar o comando:
-
-```
-$ git mv <nome_antigo> <nome_novo>
-```
-
-- o símbolo **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- substitua o \<nome_antigo> e \<nome_novo> pelos nomes do arquivo e o novo nome que deseja dar a ele, sem os sinais **<>**
-
-Esse comando também é usado para mover arquivos do repositório. Exemplo:
-
-```
-$ git mv <arquivo> <diretorio/>
-```
-
-Exemplo:
-
-Mudando o nome do arquivo **nintendo64.html** para **n64.html**.
-
-![mudando o nome do arquivo nintendo64.html](img/p0007-0.png)
-
-Movendo o arquivo **estilo.css** para o **diretório css**.
-
-![movendo o arquivo estilo.css](img/p0007-1.png)
