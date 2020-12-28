@@ -93,33 +93,30 @@
                         digite o nome do arquivo sem os sinais <strong>&lt; &gt;</strong>.
                     </li>
                 </ul>
-
+                <h2>
+                    Histórico das modificações
+                </h2>
+                <p>
+                    O comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git log -p
+                </code>
+                <p>
+                    faz a junção dos comandos <strong>log</strong> e <strong>diff</strong>; mostrando <strong>todas as alterações</strong> que foram feitas no(s) arquivo(s) rastreada(s) pelo Git. Pressione ENTER para descer a página e ao chegar ao fim, pressione <strong>q</strong> para sair.
+                </p>
+                <img class="exemplo" src="img/p0008-10.gif" alt="histórico das modificações">
+                <p>
+                    Com o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git log -p -&lt;n&gt;
+                </code>
+                <p>
+                    É possível ver um determinado número de históricos das modificações. Sendo o <strong>&lt;n&gt;</strong> o número de histórico de modificações que gostaria de ver, a partir do último (caso não queira ver tudo).
+                </p>
+                <img class="exemplo" src="img/p0008-11.gif" alt="histórico parcial das modificações">
             </article>
         </div>
     </body>
 </html>
-
-
-
-
-## Histórico das modificações
-
-O comando
-
-```
-$ git log -p
-```
-
-faz a junção dos comandos **log** e **diff**; mostrando **todas as alterações** que foram feitas no(s) arquivo(s) rastreada(s) pelo Git. Pressione ENTER para descer a página e ao chegar ao fim, pressione **q** para sair.
-
-![histórico das modificações](img/p0008-10.gif)
-
-Com o comando
-
-```
-$ git log -p -<n>
-```
-
-É possível ver um determinado número de históricos das modificações. Sendo o **\<n>** o número de histórico de modificações que gostaria de ver, a partir do último (caso não queira ver tudo).
-
-![histórico parcial das modificações](img/p0008-11.gif)
