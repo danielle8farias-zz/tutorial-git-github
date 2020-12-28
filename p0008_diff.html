@@ -54,6 +54,45 @@
                     E o que está escrito com a cor <strong>branca</strong> aquilo que foi <strong>mantido</strong> (não houve modificação).
                 </p>
                 <img class="exemplo" src="img/p0008-5.png" alt="partes em verde adicionadas no arquivo">
+                <p>
+                    O comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git diff HEAD
+                </code>
+                <p>
+                    É semelhante ao que usamos anteriormente.
+                </p>
+                <p>
+                    No cabeçalho, temos que <strong>11 linhas foram subtraídas ou modificadas a partir da linha 1</strong> e também <strong>11 linhas foram adicionadas a partir da primeira</strong>, conforme podemos ver em destaque na imagem abaixo.
+                </p>
+                <img class="exemplo" src="img/p0008-6.png" alt="linhas modificadas e adicionadas">
+                <p>
+                    Temos também os marcadores de modificação, que o git chama de <strong>a</strong> e <strong>b</strong>. Sendo <strong>a</strong> o arquivo como ele estava anteriormente e <strong>b</strong> o arquivo atual.
+                </p>
+                <img class="exemplo" src="img/p0008-7.png" alt="marcadores de comparação">
+                <p>
+                    Ao adicionar o arquivo com o comando <code class="caixa-codigo-inline">git add</code> se usarmos o <code class="caixa-codigo-inline">git diff</code> novamente, não será retornado nada.
+                </p>
+                <img class="exemplo" src="img/p0008-8.png" alt="sem retorno após ir para o index">
+                <p>
+                    Para verificar as mudanças desse arquivo (que agora está no <strong>index</strong>) usamos o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git diff --staged
+                </code>
+                <img class="exemplo" src="img/p0008-9.png" alt="diff staged">
+                <p>
+                    É importante notar que o comando <code class="caixa-codigo-inline">git diff</code> retorna as modificações de todos os arquivos. Caso queira que seja mostrado de apenas um arquivo em específico, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git diff &lt;nome_do_arquivo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        digite o nome do arquivo sem os sinais <strong>&lt; &gt;</strong>.
+                    </li>
+                </ul>
 
             </article>
         </div>
@@ -62,45 +101,6 @@
 
 
 
-
-
-
-
-O comando
-
-```
-$ git diff HEAD
-```
-
-É semelhante ao que usamos acima.
-
-No cabeçalho, temos que **11 linhas foram subtraídas ou modificadas a partir da linha 1** e também **11 linhas foram adicionadas a partir da primeira**, conforme podemos ver em destaque na imagem abaixo.
-
-![linhas modificadas e adicionadas](img/p0008-6.png)
-
-Temos também os marcadores de modificação, que o git chama de **a** e **b**. Sendo **a** o arquivo como ele estava anteriormente e **b** o arquivo atual.
-
-![marcadores de comparação](img/p0008-7.png)
-
-Ao adicionar o arquivo com o comando ```git add``` se usarmos o ```git diff``` novamente, não será retornado nada.
-
-![sem retorno após ir para o index](img/p0008-8.png)
-
-Para verificar as mudanças desse arquivo (que agora está no **index**) usamos o comando:
-
-```
-$ git diff --staged
-```
-
-![diff staged](img/p0008-9.png)
-
-É importante notar que o comando ```git diff``` retorna as modificações de todos os arquivos. Caso queira que seja mostrado de apenas um arquivo em específico, digite:
-
-```
-$ git diff <nome_do_arquivo>
-```
-
-- digite o nome do arquivo sem os sinais **< >**.
 
 ## Histórico das modificações
 
