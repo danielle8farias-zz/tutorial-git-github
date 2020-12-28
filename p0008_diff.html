@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    
+    </body>
+</html>
+
+# git diff: Verificando modificações no repositório
+
+
+Para saber o que foi modificado em um arquivo rastreado do repositório, mas que ainda não foi adicionado um commit sobre, usamos o comando:
+
+```
+$ git diff
+```
+
+- o símbolo **$** indica que você deve usar o **usuário comum** para fazer essa operação.
+
+Exemplo:
+
+Temos o arquivo inicial abaixo
+
+![arquivo html sem as modificações](img/p0008-0.png)
+
+Em seguida, fizemos as seguintes modificações
+
+![arquivo html com as modificações](img/p0008-1.png)
+
+Ao digitar o comando **diff**, temos:
+
+![usando o comando git diff](img/p0008-2.png)
+
+Assim podemos ver (escrito em **verde**) quais partes do arquivo foram **adicionadas**. 
+
+![partes em verde adicionadas no arquivo](img/p0008-3.png)
+
+Em **vermelho**, as partes que foram **retiradas ou modificadas**. 
+
+![partes em verde adicionadas no arquivo](img/p0008-4.png)
+
+E o que está escrito com a cor **branca** aquilo que foi **mantido** (não houve modificação).
+
+![partes em verde adicionadas no arquivo](img/p0008-5.png)
+
+O comando
+
+```
+$ git diff HEAD
+```
+
+É semelhante ao que usamos acima.
+
+No cabeçalho, temos que **11 linhas foram subtraídas ou modificadas a partir da linha 1** e também **11 linhas foram adicionadas a partir da primeira**, conforme podemos ver em destaque na imagem abaixo.
+
+![linhas modificadas e adicionadas](img/p0008-6.png)
+
+Temos também os marcadores de modificação, que o git chama de **a** e **b**. Sendo **a** o arquivo como ele estava anteriormente e **b** o arquivo atual.
+
+![marcadores de comparação](img/p0008-7.png)
+
+Ao adicionar o arquivo com o comando ```git add``` se usarmos o ```git diff``` novamente, não será retornado nada.
+
+![sem retorno após ir para o index](img/p0008-8.png)
+
+Para verificar as mudanças desse arquivo (que agora está no **index**) usamos o comando:
+
+```
+$ git diff --staged
+```
+
+![diff staged](img/p0008-9.png)
+
+É importante notar que o comando ```git diff``` retorna as modificações de todos os arquivos. Caso queira que seja mostrado de apenas um arquivo em específico, digite:
+
+```
+$ git diff <nome_do_arquivo>
+```
+
+- digite o nome do arquivo sem os sinais **< >**.
+
+## Histórico das modificações
+
+O comando
+
+```
+$ git log -p
+```
+
+faz a junção dos comandos **log** e **diff**; mostrando **todas as alterações** que foram feitas no(s) arquivo(s) rastreada(s) pelo Git. Pressione ENTER para descer a página e ao chegar ao fim, pressione **q** para sair.
+
+![histórico das modificações](img/p0008-10.gif)
+
+Com o comando
+
+```
+$ git log -p -<n>
+```
+
+É possível ver um determinado número de históricos das modificações. Sendo o **\<n>** o número de histórico de modificações que gostaria de ver, a partir do último (caso não queira ver tudo).
+
+![histórico parcial das modificações](img/p0008-11.gif)
+
+tags: git, diff, staged, log, tutorial, linux
