@@ -16,45 +16,55 @@
                 <h1>&gt;_ git diff: Verificando modificações no repositório</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    Para saber o que foi modificado em um arquivo rastreado do repositório, mas que ainda não foi adicionado um commit sobre, usamos o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git diff
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                </ul>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Temos o arquivo inicial abaixo
+                </p>
+                <img class="exemplo" src="img/p0008-0.png" alt="arquivo html sem as modificações">
+                <p>
+                    Em seguida, fizemos as seguintes modificações
+                </p>
+                <img class="exemplo" src="img/p0008-1.png" alt="arquivo html com as modificações">
+                <p>
+                    Ao digitar o comando <strong>diff</strong>, temos:
+                </p>
+                <img class="exemplo" src="img/p0008-2.png" alt="usando o comando git diff">
+                <p>
+                    Assim podemos ver (escrito em <span id="verde">verde</span>) quais partes do arquivo foram <strong>adicionadas</strong>. 
+                </p>
+                <img class="exemplo" src="img/p0008-3.png" alt="partes em verde adicionadas no arquivo">
+                <p>
+                    Em <span id="vermelho">vermelho</span>, as partes que foram <strong>retiradas ou modificadas</strong>. 
+                </p>
+                <img class="exemplo" src="img/p0008-4.png" alt="partes em verde adicionadas no arquivo">
+                <p>
+                    E o que está escrito com a cor <strong>branca</strong> aquilo que foi <strong>mantido</strong> (não houve modificação).
+                </p>
+                <img class="exemplo" src="img/p0008-5.png" alt="partes em verde adicionadas no arquivo">
+
             </article>
         </div>
     </body>
 </html>
 
 
-Para saber o que foi modificado em um arquivo rastreado do repositório, mas que ainda não foi adicionado um commit sobre, usamos o comando:
 
-```
-$ git diff
-```
 
-- o símbolo **$** indica que você deve usar o **usuário comum** para fazer essa operação.
 
-Exemplo:
 
-Temos o arquivo inicial abaixo
-
-![arquivo html sem as modificações](img/p0008-0.png)
-
-Em seguida, fizemos as seguintes modificações
-
-![arquivo html com as modificações](img/p0008-1.png)
-
-Ao digitar o comando **diff**, temos:
-
-![usando o comando git diff](img/p0008-2.png)
-
-Assim podemos ver (escrito em **verde**) quais partes do arquivo foram **adicionadas**. 
-
-![partes em verde adicionadas no arquivo](img/p0008-3.png)
-
-Em **vermelho**, as partes que foram **retiradas ou modificadas**. 
-
-![partes em verde adicionadas no arquivo](img/p0008-4.png)
-
-E o que está escrito com a cor **branca** aquilo que foi **mantido** (não houve modificação).
-
-![partes em verde adicionadas no arquivo](img/p0008-5.png)
 
 O comando
 
