@@ -13,77 +13,91 @@
     <body>
         <div class="corpo-central">
             <div class="titulo">
-                <h1>&gt;_ git -am: Atualizando arquivo modificado no Git</h1>
+                <h1>&gt;_ git -am: Atualizando arquivo(s) modificado(s) no Git</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    Para atualizar um arquivo que foi modificado no repositório, existem dois caminhos.
+                </p>
+                <code class="caixa-codigo">
+                    $ git add &lt;nome_do_arquivo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>add</strong> para adicionar ao <strong>index</strong> o(s) arquivo(s) que virá(ão) em seguida.
+                    </li>
+                    <li>
+                        digite o nome do arquivo sem os sinais <strong>&lt; &gt;</strong>.
+                    </li>
+                </ul>
+                <p>
+                    seguido do <strong>commit</strong>
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit -m 'sua mensagem aqui'
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Aqui temos o arquivo <strong>index.html</strong> que foi modificado.
+                </p>
+                <img class="exemplo" src="img/p0009-0.png" alt="arquivo modificado">
+                <p>
+                    Adicionando o arquivo com o comando <code class="caixa-codigo-inline">git add</code>
+                </p>
+                <img class="exemplo" src="img/p0009-1.png" alt="git add no arquivo modificado">
+                <p>
+                    E fazendo o <strong>commit</strong>
+                </p>
+                <img class="exemplo" src="img/p0009-2.png" alt="fazendo o commit do arquivo">
+                <h2>
+                    Atalho
+                </h2>
+                <p>
+                    Também é possível fazer o <strong>commit das modificações</strong> através de um <strong>atalho</strong>:
+                </p>
+                <code class="caixa-codigo">
+                    $ git commit -am 'adição de modificação do arquivo'
+                </code>
+                <p>
+                    O parâmetro <strong>-a adiciona todos os arquivos que foram modificados</strong>, sem a necessidade de adicionar cada um individualmente.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Aqui temos vários arquivos modificados
+                </p>
+                <img class="exemplo" src="img/p0009-3.png" alt="vários arquivos modificados">
+                <p>
+                    Usando o atalho
+                </p>
+                <img class="exemplo" src="img/p0009-4.png" alt="usando o atalho">
+                <p>
+                    <strong>Observação:</strong>
+                </p>
+                <ul class="observacao">
+                    <li>
+                        É importante notar que se houver um arquivo novo (ainda não rastreado pelo <strong>Git</strong>) o comando <code class="caixa-codigo-inline">git commit -am</code> faz a adição do commit <strong>apenas dos arquivos já rastreados que foram modificados</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Temos um arquivo que foi modificado (<strong>nintendo64.html</strong>) e um arquivo novo (<strong>estilo-mobile.css</strong>) ainda não rastreado.
+                </p>
+                <img class="exemplo" src="img/p0009-5.png" alt="arquivo modificado e outro não rastreado">
+                <p>
+                    Usando o atalho <code class="caixa-codigo-inline">git commit -am</code> podemos perceber que somente o arquivo modificado foi mandado ao <strong>index</strong>.
+                </p>
+                <img class="exemplo" src="img/p0009-6.png" alt="fazendo o commit, através do atalho, do arquivo modificado">
             </article>
         </div>
 
     </body>
 </html>
-
-
-
-Para atualizar um arquivo que foi modificado no repositório, existem dois caminhos.
-
-```
-$ git add <arquivo>
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- **add** vai adicionar ao git o(s) arquivo(s) que virá(ão) em seguida.
-- digite o nome do arquivo sem os sinais **< >**.
-
-seguido do **commit**
-
-```
-$ git commit -m 'sua mensagem aqui'
-```
-
-Exemplo:
-
-Aqui temos o arquivo index.html que foi modificado.
-
-![arquivo modificado](img/p0009-0.png)
-
-Adicionando o arquivo com o comando ```git add```
-
-![git add no arquivo modificado](img/p0009-1.png)
-
-E fazendo o **commit**
-
-![fazendo o commit do arquivo](img/p0009-2.png)
-
-
-## Atalho
-
-Também é possível fazer o **commit das modificações** através de um **atalho**:
-
-```
-$ git commit -am 'adição de modificação do arquivo'
-```
-
-O parâmetro **-a adiciona todos os arquivos que foram modificados**, sem a necessidade de adicionar cada um individualmente.
-
-Exemplo:
-
-Aqui temos vários arquivos modificados
-
-![vários arquivos modificados](img/p0009-3.png)
-
-Usando o atalho
-
-![usando o atalho](img/p0009-4.png)
-
-**Observação:**
-É importante notar que se houver um arquivo novo (ainda não rastreado pelo **git**) o comando ```git commit -am``` faz a adição do commit **apenas dos arquivos  já rastreados que foram modificados**.
-
-Exemplo:
-
-Temos um arquivo que foi modificado (**nintendo64.html**) e um arquivo novo (**estilo-mobile.css**) ainda não rastreado.
-
-![arquivo modificado e outro não rastreado](img/p0009-5.png)
-
-Usando o atalho ```git commit -am``` podemos perceber que somente o arquivo modificado foi mandado ao **index**.
-
-![fazendo o commit, através do atalho, do arquivo modificado](img/p0009-6.png)
