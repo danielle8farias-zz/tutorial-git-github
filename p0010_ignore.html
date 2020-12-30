@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilo.css">
+        <link rel="icon" href="img/git_icon.png">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
@@ -16,42 +17,61 @@
                 <h1>gitignore: Ignorando arquivos no Git</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    Caso você queira que o Git <strong>não enxergue</strong> determinado(s) arquivo(s) dentro do seu diretório que está sendo rastreado, precisamos criar o seguinte arquivo:
+                </p>
+                <code class="caixa-codigo">
+                    $ touch .gitignore
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>touch</strong> serve para criar arquivos no Linux pelo terminal.
+                    </li>
+                    <li>
+                        <strong>.gitignore</strong> deve ser o nome do nosso arquivo de texto.
+                    </li>
+                </ul>
+                <p>
+                    Abrindo esse arquivo, vamos digitar dentro dele o que queremos deixar de fora do repositório.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0010-0.png" alt="editando arquivo .gitignore">
+                <p>
+                    Assim temos:
+                </p>
+                <ul class="observacao">
+                    <li>
+                        uma <strong>pasta como primeiro item</strong>, pois ela termina com a <strong>barra</strong>.
+                    </li>
+                    <li>
+                        um <strong>arquivo sem extensão</strong> no <strong>segundo item</strong>.
+                    </li>
+                    <li>
+                        no <strong>terceiro item</strong> estamos adicionando na lista qualquer arquivo que **termine com a extensão txt**.
+                    </li>
+                </ul>
+                <p>
+                    É importante notar que devemos informar <strong>um tipo de arquivo por linha</strong>.
+                </p>
+                <p>
+                    Os arquivos descritos dentro do arquivo <strong>.gitignore</strong> não aparecem no <strong>Working directory</strong>.
+                </p>
+                <ul class="observacao">
+                    <li>
+                        <strong>Working directory</strong>: é onde estão seus arquivos que serão trabalhados. Onde ficam os arquivos que ainda não receberam o comando <em>commit</em>.
+                    </li>
+                </ul>
+                <p>
+                    Agora basta <strong><a href="p0001_add.html">adicionar</a></strong> o arquivo <strong>.gitignore</strong> e fazer o <strong><a href="p0004_commit.html">commit</a></strong> dele.
+                </p>
+                <img class="fluxo-git" src="img/p0010-1.png" alt="gitignore no fluxo do git">
             </article>
         </div>
     
     </body>
 </html>
-
-Caso você queira que o Git **não enxergue** determinado(s) arquivo(s) dentro do seu diretório que está sendo rastreado, precisamos criar o seguinte arquivo:
-
-```
-$ touch .gitignore
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- o comando **touch** serve para criar arquivos no Linux pelo terminal.
-- **.gitignore** deve ser o nome do nosso arquivo de texto.
-
-Abrindo esse arquivo, vamos digitar dentro dele o que queremos deixar de fora do repositório.
-
-Exemplo:
-
-![editando arquivo .gitignore](img/p0010-0.png)
-
-Assim temos: 
-
-- uma **pasta como primeiro item**, pois ela termina com a **barra**.
-
-- um **arquivo sem extensão** no **segundo item**.
-
-- no **terceiro item** estamos adicionando na lista qualquer arquivo que **termine com a extensão txt**.
-
-É importante notar que devemos informar **um tipo de arquivo por linha**.
-
-Os arquivos descritos dentro do arquivo **.gitignore** não aparecem no **Working directory**.
-
-- **Working directory**: é onde estão seus arquivos que serão trabalhados. Onde ficam os arquivos que ainda não receberam o comando *commit*.
-
-Agora basta **[adicionar](p0001_add.md)** o arquivo **.gitignore** e fazer o **[commit](p0004_commit.md)** dele.
-
-![gitignore no fluxo do git](img/p0010-1.png)
