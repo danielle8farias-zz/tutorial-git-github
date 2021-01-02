@@ -17,6 +17,49 @@
                 <h1>Visualizando o commit no modo gráfico</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    A depender do tamanho do projeto, a visualização dos commits pelo terminal pode ser difícil. Para fazer a visualização mais legível, precisamos instalar o <strong>Git repository browser</strong>.
+                </p>
+                <code class="caixa-codigo">
+                    $ sudo apt install gitk
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>sudo</strong> é o comando que dá permissões de <strong>super usuário</strong> temporariamente; assim é possível fazer a instalação de programas.
+                    </li>
+                    <li>
+                        <strong>apt</strong> do inglês, <em>Advanced Package Tool</em>, em português, <strong>Ferramenta de Empacotamento Avançada</strong>; é a ferramenta que nos ajuda na instalação, atualização e desinstalação de programas, entre outras funções.
+                    </li>
+                    <li>
+                        <strong>install</strong> é o comando de instalar, indicando ao <strong>apt</strong> o que fazer.
+                    </li>
+                </ul>
+                <p>
+                    Assim ao digitar no terminal
+                </p>
+                <code class="caixa-codigo">
+                    $ gitk
+                </code>
+                <p>
+                    A seguinte janela abrirá:
+                </p>
+                <img class="exemplo" src="img/p0011-0.png" alt="visualização gráfica do fluxo do git">
+                <h2>
+                    Visualizando grafo de commits
+                </h2>
+                <p>
+                    Outra maneira de visualizar o grafo de commits, porém sem instalar nada é através do comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git log --graph
+                </code>
+                <p>
+                    Abaixo, um exemplo do retorno.
+                </p>
+                <img class="exemplo" src="img/p0011-1.png" alt="grafo commit">
             </article>
             <nav>
                 <div class="nav-esquerda">
@@ -41,38 +84,3 @@
         </div>
     </body>
 </html>
-
-
-
-A depender do tamanho do projeto, a visualização dos commits pelo terminal pode ser difícil. Para fazer a visualização mais legível, precisamos instalar o **Git repository browser**.
-
-```
-$ sudo apt install gitk
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- **sudo** é o comando que dá permissões de super usuário temporariamente; assim é possível fazer a instalação de programas.
-- **apt** do inglês, *Advanced Package Tool*, em português, Ferramenta de Empacotamento Avançada; é a ferramenta que nos ajuda na instalação, atualização e desinstalação de programas, entre outras funções.
-- **install** é o comando de instalar, indicando ao apt o que fazer.
-
-Assim ao digitar no terminal
-
-```
-$ gitk
-```
-
-A seguinte janela abrirá:
-
-![visualização gráfica do fluxo do git](img/p0011-0.png)
-
-## Visualizando grafo de commits
-
-Outra maneira de visualizar o grafo de commits, porém sem instalar nada é através do comando:
-
-```
-$ git log --graph
-```
-
-Abaixo, um exemplo do retorno.
-
-![grafo commit](img/p0011-1.png)
