@@ -1,0 +1,35 @@
+# git rm: Excluindo arquivo do repositório
+
+
+Para apagar um arquivo ou diretório no repositório Git, fazemos
+
+```
+$ git rm <nome_do _arquivo>
+```
+
+- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
+- digite o nome do arquivo sem os sinais **< >**.
+
+Exemplo:
+
+Vamos deletar o arquivo **playstation.html** do nosso repositório.
+
+![deletando arquivo do working directory](img/p0012-0.png)
+
+Para finalizar, basta fazer o **[commit](p0004_commit.md)** dessa remoção.
+
+Caso você tenha excluido o arquivo de outra maneira, ao digitar ```git status```, o Git irá informar sobre o arquivo.
+
+Exemplo:
+
+Excluímos o arquivo **gba.html** diretamente no diretório.
+
+![arquivo excluído](img/p0012-1.png)
+
+Então, para registrar essa exclusão, podemos usar os comandos ```git add``` ou ```git rm```. Assim, temos:
+
+![registrando a exclusão do arquivo no git](img/p0012-2.png)
+
+Em seguida, fazemos o **[commit](p0004_commit.md)**.
+
+tags: git, remove, rm, delete
