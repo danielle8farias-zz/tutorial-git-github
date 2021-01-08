@@ -17,145 +17,142 @@
                 <h1>&gt;_ git branch: O que são branches (ramos) no Git?</h1>
             </div>
             <article class="caixa-texto">
+                <p>
+                    De maneira simplificada, os **ramos (branches)** no Git são semelhantes a um ramo de uma árvore, onde o tronco seria a base do código. Desse modo é possível criar diversos ramos e fazer alterações, enquanto a base permanece intacta. Por padrão o ramo principal é denominado de **main** (master, na versão antiga).
+                </p>
+                <img class="fluxo-git" src="img/p0014-0.png" alt="ramos no git">
+                <h2>
+                    Criando branch
+                </h2>
+                <p>
+                    Para criar um <strong>branch</strong>, digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch &lt;nome_do_ramo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        escolha um nome para o seu ramo sem os sinais <strong>&lt; &gt;</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Para ir até o <strong>branch</strong> criado
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;nome_do_ramo&gt;
+                </code>
+                <p>
+                    Para usar um atalho para esses dois comandos acima
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout -b &lt;nome_do_ramo&gt;
+                </code>
+                <p>
+                    Desse modo o <strong>branch</strong> será criado e em seguida irá transferir você para lá.
+                </p>
+                <h2>
+                    Listar branch
+                </h2>
+                <p>
+                    Para listar todos os <strong>branches</strong>, usa-se o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch -a
+                </code>
+                <p>
+                    Para saber em qual <strong>branch</strong> você está, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch
+                </code>
+                <h2>
+                    Excluindo branch
+                </h2>
+                <p>
+                    Para excluir um <strong>branch</strong>, digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch -d &lt;nome_do_ramo&gt;
+                </code>
+                <h2>
+                    Excluindo branch remoto
+                </h2>
+                <code class="caixa-codigo">
+                    $ git push origin --delete &lt;nome_do_ramo&gt;
+                </code>
+                <h2>
+                    Unindo branch
+                </h2>
+                <p>
+                    Para unir todas as modificações que foram feitas em diferentes <strong>branches</strong>, ao ramo principal do projeto, digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout main
+                </code>
+                <p>
+                    para ir até o <strong>branch principal</strong> ou
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;nome_do_ramo&gt;
+                </code>
+                <p>
+                    para ir até o <strong>branch</strong> de destino das alterações.
+                </p>
+                <p>
+                    Então digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git merge &lt;nome_do_ramo_onde_as_alterações_foram_feitas&gt;
+                </code>
+                <p>
+                    O fluxo dos <strong>branches</strong> será algo como a figura abaixo (unindo <strong>branch 1</strong> a <strong>main</strong>).
+                </p>
+                <img class="fluxo-git" src="img/p0014-1.png" alt="merge">
+                <p>
+                    Para visualizar os <strong>commits de merge</strong>:
+                </p>
+                <code class="caixa-codigo">
+                    $ git log --merges
+                </code>
+                <h2>
+                    Resolvendo conflitos ao unir os ramos no git
+                </h2>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Supondo que temos um arquivo na <strong>branch main</strong> com o seguinte código
+                </p>
+                <img class="exemplo" src="img/p0014-2.png" alt="versão 1 do código py">
+                <p>
+                    E o mesmo arquivo na <strong>branch teste</strong>, com o código:
+                </p>
+                <img class="exemplo" src="img/p0014-3.png" alt="versão 2 do código py">
+                <p>
+                    Ao tentar fazer o <strong>merge</strong> o git anunciará o conflito:
+                </p>
+                <code class="caixa-codigo">
+                    Mesclagem automática de &lt;arquivo&gt;
+                </code>
+                <code class="caixa-codigo">
+                    CONFLITO (conteúdo): conflito de mesclagem em &lt;arquivo&gt;
+                </code>
+                <code class="caixa-codigo">
+                    Automatic merge failed; fix conflicts and then commit the result.                        
+                </code>
+                <p>
+                    Desse modo, é preciso primeiro resolver a situação conflitante (escolhendo as partes do código que deseja manter) e em seguida fazer o <strong>commit</strong>.
+                </p>
+                <p>
+                    Caso deseje desfazer esse processo, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git merge --abort
+                </code>
             </article>
         </div>
     </body>
 </html>
-
-
-
-De maneira simplificada, os **ramos (branches)** no Git são semelhantes a um ramo de uma árvore, onde o tronco seria a base do código. Desse modo é possível criar diversos ramos e fazer alterações, enquanto a base permanece intacta. Por padrão o ramo principal é denominado de **main** (master, na versão antiga).
-
-![ramos no git](img/p0014-0.png)
-
-## Criando branch
-
-Para criar um **branch**, digite
-
-```
-$ git branch <nome_do_ramo>
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- escolha um nome para o seu ramo sem os sinais **< e >**.
-
-Para ir até o **branch** criado
-
-```
-$ git checkout <nome_do_ramo>
-```
-
-Para usar um atalho para esses dois comandos acima
-
-```
-$ git checkout -b <nome_do_ramo>
-```
-
-Desse modo o **branch** será criado e em seguida irá transferir você para lá.
-
-## Listar branch
-
-Para listar todos os **branches**, usa-se o comando:
-
-```
-$ git branch -a
-```
-
-Para saber em qual **branch** você está, digite:
-
-```
-$ git branch
-```
-
-## Excluindo branch
-
-Para excluir um **branch**, digite
-
-```
-$ git branch -d <nome_do_ramo>
-```
-
-## Excluindo branch remoto
-
-```
-$ git push origin --delete <nome_do_ramo>
-```
-
-## Unindo branch
-
-Para unir todas as modificações que foram feitas em diferentes **branches**, ao ramo principal do projeto, digite
-
-```
-$ git checkout main
-```
-
-para ir até o **branch principal** ou
-
-```
-$ git checkout <nome_do_ramo>
-```
-
-para ir até o **branch** de destino das alterações.
-
-Então digite
-
-```
-$ git merge <nome_do_ramo_onde_as_alterações_foram_feitas>
-```
-
-O fluxo dos **branches** será algo como a figura abaixo (unindo **branch 1** a **main**).
-
-![merge](img/p0014-1.png)
-
-Para visualizar os **commits** de **merge**:
-
-```
-$ git log --merges 
-```
-
-## Resolvendo conflitos ao unir os ramos no git
-
-Exemplo:
-
-Supondo que temos um arquivo na **branch main** com o seguinte código
-
-```py
-def soma(x,y):
-    z = x+y
-    print(x,"+",y,"=",z)
-
-print('SOMA DOIS NÚMEROS')
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-soma(num1,num2)
-```
-
-E o mesmo arquivo na **branch teste**, com o código:
-
-```py
-def somar(a,b):
-    c = a+b
-    return c
-
-print('SOMA DOIS NÚMEROS')
-numero1 = float(input("Digite o primeiro número: "))
-numero2 = float(input("Digite o segundo número: "))
-resultado = somar(numero1,numero2)
-print(f'Soma: {resultado}')
-```
-
-Ao tentar fazer o **merge** o git anunciará o conflito:
-
-```
-Mesclagem automática de <arquivo>
-CONFLITO (conteúdo): conflito de mesclagem em <arquivo>
-Automatic merge failed; fix conflicts and then commit the result.
-```
-
-Desse modo, é preciso primeiro resolver a situação conflitante (escolhendo as partes do código que deseja manter) e em seguida fazer o **commit**.
-
-Caso deseje desfazer esse processo, digite:
-
-```
-$ git merge --abort
-```
