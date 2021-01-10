@@ -1,0 +1,134 @@
+# git checkout: Navegando entre ramos e snapshots
+
+## Mudando de branch (ramo)
+
+Para mudar de um determinado ramo, digite:
+
+```
+$ git branch <nome_do_ramo>
+```
+
+- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
+- escolha o nome do ramo que você deseja, sem os sinais **< e >**.
+
+## Navegando entre snapshots dos commits
+
+Às vezes é necessário verificar com detalhes quais modificações foram feitas no seu código/projeto. Então para navegar entre os **snapshots** fazemos: 
+
+```
+$ git checkout <chave_do_commit>
+```
+
+O que esse comando faz é apontar o **HEAD** para um determinado **commit**
+
+Para voltar um **commit** anterior, digite:
+
+```
+$ git checkout HEAD~1
+```
+
+- **HEAD~1** desloca o ponteiro HEAD para o **commit anterior** ao atual.
+
+Aqui é importante notar que será criado um **branch temporário**.
+
+Você pode confirmar isso através do comando
+
+```
+$ git branch
+```
+
+Exemplo:
+
+![branch temporária](img/p0015-0.png)
+
+Nesse ponto, você estará visualizando as alterações que foram feitas até esse **commit**.
+
+Após a visualização de todo o conteúdo do(s) arquivo(s), você pode voltar ao ramo principal com o comando:
+
+```
+$ git checkout <nome_do_seu_branch_principal>
+```
+
+Exemplo:
+
+![voltando ao ramo master](img/p0015-1.png)
+
+Aqui podemos ver uma mensagem onde é mostrado em que posição o ponteiro HEAD estava, ou seja, de onde viemos.
+
+Exemplo de uso do checkout:
+
+Temos no nosso ramo master os seguintes arquivos
+
+![listando arquivos no ramo master](img/p0015-2.png)
+
+E queremos verificar o projeto no ponto indicado pela imagem abaixo
+
+![git log](img/p0015-3.png)
+
+Sendo assim, fazemos
+
+![usando o checkout para ver um determinado commit](img/p0015-4.png)
+
+Verificando novamente os arquivos do projeto, temos
+
+![listando os arquivo novamente](img/p0015-5.png)
+
+Podemos perceber que temos alguns arquivos a mais que não tínhamos quando o **ponteiro HEAD** estava no **último commit**.
+
+Aqui podemos ver todo o projeto como ele estava num **commit passado**. E então retornamos ao ramos principal.
+
+## Fazendo alterações
+
+Caso seja necessário alterações no projeto em um snapshot passado, basta fazer um commit após essas alterações.
+
+Para não perder as informações é necessário criar um novo **branch**, dessa maneira:
+
+```
+$ git branch <nome_do_novo_ramo> <chave_do_útimo_commit>
+```
+
+Em seguida basta ir até o novo **branch** criado com o comando
+
+```
+$ git checkout <nome_do_novo_ramo>
+```
+
+E, caso seja preciso, fazer o **merge** com o branch principal.
+
+Exemplo:
+
+Pegando o mesmo exemplo anterior, fiz um commit após algumas alterações.
+
+![commit no branch temporário](img/p0015-6.png)
+
+Observe que após o **commit** houve uma mudança na chave
+
+![estado do git após o commit](img/p0015-7.png)
+
+Como podemos perceber, essa é a chave do commit feito há pouco
+
+![git log](img/p0015-8.png)
+
+Para que esse commit não seja perdido, temos que criar um novo branch com essa chave nova, assim
+
+![branch nova e chave nova](img/p0015-9.png)
+
+Aqui, podemos confirmar que o novo branch foi criado
+
+![git branch](img/p0015-10.png)
+
+Agora só precisamos voltar ao ramo principal
+
+![voltando ao ramo principal](img/p0015-11.png)
+
+O que aconteceu aqui, no fluxo do Git, é algo semelhante ao mostrado na imagem abaixo.
+
+![fluxo do git](img/p0015-12.png)
+
+## Observação:
+
+- Recomenda-se usar o **checkout** para visualizar as snapshots dos commits apenas quando o **Working directory** estiver limpo, para evitar conflitos.
+
+![working directory limpo](img/p0015-13.png)
+
+tags: checkout, git, commit, head, linux, tutorial
