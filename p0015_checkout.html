@@ -111,68 +111,69 @@
                 <p>
                     Aqui podemos ver todo o projeto como ele estava num <strong>commit passado</strong>. E então retornamos ao ramos principal.
                 </p>
+                <h2>
+                    Fazendo alterações
+                </h2>
+                <p>
+                    Caso seja necessário alterações no projeto em um snapshot passado, basta fazer um commit após essas alterações.
+                </p>
+                <p>
+                    Para não perder as informações é necessário criar um novo <strong>branch</strong>, dessa maneira:
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch &lt;nome_do_novo_ramo&gt; &lt;chave_do_útimo_commit&gt;
+                </code>
+                <p>
+                    Em seguida basta ir até o novo <strong>branch</strong> criado com o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;nome_do_novo_ramo&gt;
+                </code>
+                <p>
+                    E, caso seja preciso, fazer o <strong>merge</strong> com o branch principal.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Pegando o mesmo exemplo anterior, fiz um commit após algumas alterações.
+                </p>
+                <img class="exemplo" src="img/p0015-6.png" alt="commit no branch temporário">
+                <p>
+                    Observe que após o <strong>commit</strong> houve uma mudança na chave
+                </p>
+                <img class="exemplo" src="img/p0015-7.png" alt="estado do git após o commit">
+                <p>
+                    Como podemos perceber, essa é a chave do commit feito há pouco
+                </p>
+                <img class="exemplo" src="img/p0015-8.png" alt="git log">
+                <p>
+                    Para que esse commit não seja perdido, temos que criar um novo branch com essa chave nova, assim
+                </p>
+                <img class="exemplo" src="img/p0015-9.png" alt="branch nova e chave nova">
+                <p>
+                    Aqui, podemos confirmar que o novo branch foi criado
+                </p>
+                <img class="exemplo" src="img/p0015-10.png" alt="git branch">
+                <p>
+                    Agora só precisamos voltar ao ramo principal
+                </p>
+                <img class="exemplo" src="img/p0015-11.png" alt="voltando ao ramo principal">
+                <p>
+                    O que aconteceu aqui, no fluxo do Git, é algo semelhante ao mostrado na imagem abaixo.
+                </p>
+                <img class="fluxo-git" src="img/p0015-12.png" alt="fluxo do git">
+                <h2>
+                    Observação:
+                </h2>
+                <ul class="observacao">
+                    <li>
+                        Recomenda-se usar o <strong>checkout</strong> para visualizar as snapshots dos commits apenas quando o <strong>Working directory</strong> estiver limpo, para evitar conflitos.
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0015-13.png" alt="working directory limpo">
+
             </article>
         </div>
     </body>
 </html>
-
-
-
-
-
-
-## Fazendo alterações
-
-Caso seja necessário alterações no projeto em um snapshot passado, basta fazer um commit após essas alterações.
-
-Para não perder as informações é necessário criar um novo **branch**, dessa maneira:
-
-```
-$ git branch <nome_do_novo_ramo> <chave_do_útimo_commit>
-```
-
-Em seguida basta ir até o novo **branch** criado com o comando
-
-```
-$ git checkout <nome_do_novo_ramo>
-```
-
-E, caso seja preciso, fazer o **merge** com o branch principal.
-
-Exemplo:
-
-Pegando o mesmo exemplo anterior, fiz um commit após algumas alterações.
-
-![commit no branch temporário](img/p0015-6.png)
-
-Observe que após o **commit** houve uma mudança na chave
-
-![estado do git após o commit](img/p0015-7.png)
-
-Como podemos perceber, essa é a chave do commit feito há pouco
-
-![git log](img/p0015-8.png)
-
-Para que esse commit não seja perdido, temos que criar um novo branch com essa chave nova, assim
-
-![branch nova e chave nova](img/p0015-9.png)
-
-Aqui, podemos confirmar que o novo branch foi criado
-
-![git branch](img/p0015-10.png)
-
-Agora só precisamos voltar ao ramo principal
-
-![voltando ao ramo principal](img/p0015-11.png)
-
-O que aconteceu aqui, no fluxo do Git, é algo semelhante ao mostrado na imagem abaixo.
-
-![fluxo do git](img/p0015-12.png)
-
-## Observação:
-
-- Recomenda-se usar o **checkout** para visualizar as snapshots dos commits apenas quando o **Working directory** estiver limpo, para evitar conflitos.
-
-![working directory limpo](img/p0015-13.png)
-
-tags: 
