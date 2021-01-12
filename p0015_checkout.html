@@ -34,77 +34,92 @@
                         escolha o nome do ramo que você deseja, sem os sinais <strong>&lt; &gt;</strong>.
                     </li>
                 </ul>
+                <h2>
+                    Navegando entre snapshots dos commits
+                </h2>
+                <p>
+                    Às vezes é necessário verificar com detalhes quais modificações foram feitas no seu código/projeto. Então para navegar entre os <strong>snapshots</strong> fazemos:
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;chave_do_commit&gt;
+                </code>
+                <p>
+                    O que esse comando faz é apontar o <strong>HEAD</strong> para um determinado <strong>commit</strong>
+                </p>
+                <p>
+                    Para voltar um <strong>commit</strong> anterior, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout HEAD~1
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>HEAD~1</strong> desloca o ponteiro HEAD para o <strong>commit anterior</strong> ao atual.
+                    </li>
+                </ul>
+                <p>
+                    Aqui é importante notar que será criado um <strong>branch temporário</strong>.
+                </p>
+                <p>
+                    Você pode confirmar isso através do comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0015-0.png" alt="branch temporária">
+                <p>
+                    Nesse ponto, você estará visualizando as alterações que foram feitas até esse <strong>commit</strong>.
+                </p>
+                <p>
+                    Após a visualização de todo o conteúdo do(s) arquivo(s), você pode voltar ao ramo principal com o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;nome_do_seu_branch_principal&gt;
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0015-1.png" alt="voltando ao ramo master">
+                <p>
+                    Aqui podemos ver uma mensagem onde é mostrado em que posição o ponteiro HEAD estava, ou seja, de onde viemos.
+                </p>
+                <p>
+                    Exemplo de uso do checkout:
+                </p>
+                <p>
+                    Temos no nosso ramo master os seguintes arquivos
+                </p>
+                <img class="exemplo" src="img/p0015-2.png" alt="listando arquivos no ramo master">
+                <p>
+                    E queremos verificar o projeto no ponto indicado pela imagem abaixo
+                </p>
+                <img class="exemplo" src="img/p0015-3.png" alt="git log">
+                <p>
+                    Sendo assim, fazemos
+                </p>
+                <img class="exemplo" src="img/p0015-4.png" alt="usando o checkout para ver um determinado commit">
+                <p>
+                    Verificando novamente os arquivos do projeto, temos
+                </p>
+                <img class="exemplo" src="img/p0015-5.png" alt="listando os arquivo novamente">
+                <p>
+                    Podemos perceber que temos alguns arquivos a mais que não tínhamos quando o <strong>ponteiro HEAD</strong> estava no <strong>último commit</strong>.
+                </p>
+                <p>
+                    Aqui podemos ver todo o projeto como ele estava num <strong>commit passado</strong>. E então retornamos ao ramos principal.
+                </p>
             </article>
         </div>
     </body>
 </html>
 
 
-## Navegando entre snapshots dos commits
 
-Às vezes é necessário verificar com detalhes quais modificações foram feitas no seu código/projeto. Então para navegar entre os **snapshots** fazemos: 
 
-```
-$ git checkout <chave_do_commit>
-```
 
-O que esse comando faz é apontar o **HEAD** para um determinado **commit**
-
-Para voltar um **commit** anterior, digite:
-
-```
-$ git checkout HEAD~1
-```
-
-- **HEAD~1** desloca o ponteiro HEAD para o **commit anterior** ao atual.
-
-Aqui é importante notar que será criado um **branch temporário**.
-
-Você pode confirmar isso através do comando
-
-```
-$ git branch
-```
-
-Exemplo:
-
-![branch temporária](img/p0015-0.png)
-
-Nesse ponto, você estará visualizando as alterações que foram feitas até esse **commit**.
-
-Após a visualização de todo o conteúdo do(s) arquivo(s), você pode voltar ao ramo principal com o comando:
-
-```
-$ git checkout <nome_do_seu_branch_principal>
-```
-
-Exemplo:
-
-![voltando ao ramo master](img/p0015-1.png)
-
-Aqui podemos ver uma mensagem onde é mostrado em que posição o ponteiro HEAD estava, ou seja, de onde viemos.
-
-Exemplo de uso do checkout:
-
-Temos no nosso ramo master os seguintes arquivos
-
-![listando arquivos no ramo master](img/p0015-2.png)
-
-E queremos verificar o projeto no ponto indicado pela imagem abaixo
-
-![git log](img/p0015-3.png)
-
-Sendo assim, fazemos
-
-![usando o checkout para ver um determinado commit](img/p0015-4.png)
-
-Verificando novamente os arquivos do projeto, temos
-
-![listando os arquivo novamente](img/p0015-5.png)
-
-Podemos perceber que temos alguns arquivos a mais que não tínhamos quando o **ponteiro HEAD** estava no **último commit**.
-
-Aqui podemos ver todo o projeto como ele estava num **commit passado**. E então retornamos ao ramos principal.
 
 ## Fazendo alterações
 
