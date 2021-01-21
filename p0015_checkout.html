@@ -14,7 +14,7 @@
     <body>
         <div class="corpo-central">
             <div class="titulo">
-                <h1>&gt;_ git checkout: Navegando entre ramos e snapshots</h1>
+                <h1>&gt;_ git checkout: Navegando entre ramos e snapshots, e descartando modificações</h1>
             </div>
             <article class="caixa-texto">
                 <h2>
@@ -172,6 +172,26 @@
                     </li>
                 </ul>
                 <img class="exemplo" src="img/p0015-13.png" alt="working directory limpo">
+                <h2>
+                    Descartando modificações
+                </h2>
+                <p>
+                    O checkout também pode ser usado para descartar as modificações feitas em um arquivo, assim
+                </p>
+                <code class="caixa-codigo">
+                    $ git checkout &lt;nome_do_arquivo&gt;
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Temos dois arquivos que foram modificados e queremos descartar as modificações (voltando ao arquivo anterior as mudanças).
+                </p>
+                <img class="exemplo" src="img/p0015-14.png" alt="dois arquivos modificados">
+                <p>
+                    Usando com comando <code class="caixa-codigo-inline">git checkout</code> com os dois arquivos ao mesmo tempo:
+                </p>
+                <img class="exemplo" src="img/p0015-15.png" alt="usando o checkout para descartar alterações">
             </article>
             <nav>
                 <div class="nav-esquerda">
