@@ -155,6 +155,28 @@
                 <code class="caixa-codigo">
                     $ git merge --abort
                 </code>
+                <h2>
+                    Renomeando o branch (ramo) atual
+                </h2>
+                <p>
+                    Para renomear o ramo atual (estando nele), usamos o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch --force --move &lt;novo_nome_do_ramo&gt;
+                </code>
+                <p>
+                    Ou ainda, usando seu atalho
+                </p>
+                <code class="caixa-codigo">
+                    $ git branch -M &lt;novo_nome_do_ramo&gt;
+                </code>
+                <p>
+                    Todo <strong><a class="link-artigo" href="p0005_log_reflog.html">log e reflog</a></strong> é transferido para esse novo ramo, que ficará no lugar do anterior.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0014-4.png" alt="mudando o nome do ramo atual">
             </article>
             <nav>
                 <div class="nav-esquerda">
