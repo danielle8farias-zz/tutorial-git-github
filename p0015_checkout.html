@@ -24,7 +24,7 @@
                     Para mudar de um determinado ramo, digite:
                 </p>
                 <code class="caixa-codigo">
-                    $ git branch &lt;nome_do_ramo&gt;
+                    $ git checkout &lt;nome_do_ramo&gt;
                 </code>
                 <ul class="observacao">
                     <li>
@@ -32,6 +32,14 @@
                     </li>
                     <li>
                         escolha o nome do ramo que você deseja, sem os sinais <strong>&lt; &gt;</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Ao voltar para um determinado branch, o ponteiro <strong>head</strong> estará no <strong>último commit</strong> feito nesse ramo.
+                </p>
+                <ul class="observacao">
+                    <li>
+                        O <strong>HEAD</strong> é um ponteiro no branch que normalmente aponta para o último commit feito.
                     </li>
                 </ul>
                 <h2>
@@ -44,7 +52,7 @@
                     $ git checkout &lt;chave_do_commit&gt;
                 </code>
                 <p>
-                    O que esse comando faz é apontar o <strong>HEAD</strong> para um determinado <strong>commit</strong>
+                    O que esse comando faz é apontar o <strong>HEAD</strong> para um determinado <strong>commit</strong>.
                 </p>
                 <p>
                     Para voltar um <strong>commit</strong> anterior, digite:
