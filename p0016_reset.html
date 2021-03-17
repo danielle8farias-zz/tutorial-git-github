@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="icon" href="img/git_icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <meta name="keywords" content="danielle8farias, linux, tutorial, git, reset, soft, hard, mixed">
+        <title>git reset</title>
+    </head>
+    <body>
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>&gt;_ git reset: Retirando arquivos da "sala de espera" e desfazendo commits</h1>
+            </div>
+            <article class="caixa-texto">
+                <h2>
+                    Atenção!
+                </h2>
+                <p>
+                    Esse comando é recomendado apenas para uso em arquivos locais, ou seja, para os arquivos que estão somente na sua máquina e não em um repositório remoto.
+                </p>
+                <h2>
+                    Modo de usar o reset: padrão ou mixed
+                </h2>
+                <p>
+                    Esse comando pode ser usado para retirar arquivos do <strong>index</strong> (a "sala de espera" do git).
+                </p>
+                <img class="fluxo-git" src="img/p0016-0.png" alt="arquivos no index">
+                <p>
+                    Lembrando que os arquivos que estão no <strong>index</strong> são aqueles em que foram usados o comando <code class="caixa-codigo-inline">git add</code>, mas que ainda não receberam um <strong>commit</strong>.
+                </p>
+                <p>
+                    <a class="link-artigo" href="p0001_add.html">Clique aqui</a>, caso precise saber mais sobre o comando add do Git.
+                </p>
+                <p>
+                    Sendo assim, usamos:
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset &lt;nome_do_arquivo&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        digite o nome do arquivo sem os sinais <strong>&lt; &gt;</strong>.
+                    </li>
+                </ul>
+                <p>
+                    que tem o mesmo valor do comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --mixed &lt;nome_do_arquivo&gt;
+                </code>
+                <p>
+                    Quando não é especificado o modo, o <strong>Git</strong> usarão o <strong>padrão</strong>, que é o <strong>mixed</strong>.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Vamos supor que eu tenho, no meu projeto, um arquivo já <strong>rastreado pelo Git</strong>, mas que foi <strong>modificado</strong>.
+                </p>
+                <img class="exemplo" src="img/p0016-1.png" alt="arquivo modificado">
+                <img class="fluxo-git" src="img/p0016-2.png" alt="fluxo do arquivo modificado">
+                <p>
+                    E acabei mandando-o para o <strong>index</strong>
+                </p>
+                <img class="exemplo" src="img/p0016-3.png" alt="arquivo no index">
+                <img class="fluxo-git" src="img/p0016-4.png" alt="fluxo do arquivo no index">
+                <p>
+                    Entretanto, <strong>não</strong> era para esse arquivo estar no <strong>index</strong> pois ainda preciso fazer outras alterações nele.
+                </p>
+                <p>
+                    Sendo assim, para retirá-lo, uso o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset comite_etica_inline.html
+                </code>
+                <img class="exemplo" src="img/p0016-5.png" alt="retomando o arquivo para o working directory">
+                <img class="fluxo-git" src="img/p0016-6.png" alt="fluxo do arquivo retornando para o working directory">
+
+
+            </article>
+        </div>
+
+    </body>
+</html>
+
+
+
+## Modo de usar o reset: soft
+
+Esse modo de usar o comando reset serve apenas para alterar o ponteiro **head**:
+
+```
+$ git reset --soft <chave_do_commit>
+```
+
+> O **HEAD** é um ponteiro no branch que normalmente aponta para o último commit feito.
+
+Exemplo:
+
+Tenho os seguintes commits no meu projeto:
+
+![retorno do comando git log](img/p0016-7.png)
+
+![commits no fluxo do git](img/p0016-8.png)
+
+![selecionando commit](img/p0016-9.png)
+
+Agora, atenção ao arquivo **comite_etica_inline.html** que estava na seguinte situação no **commit 669629**.
+
+![arquivo no commit 669629](img/p0016-10.png)
+
+E passou para a situação abaixo no **commit 9e8cf9**
+
+![commit 9e8cf9](img/p0016-11.png)
+
+Vamos voltar o ponteiro **head** ao commit selecionado na imagem abaixo, pois pretendo **refazer os commits** que estão acima deste, sem de fato, mudar o projeto e tudo o que foi feito até agora.
+
+![selecionando o commit](img/p0016-12.png)
+
+Sendo assim, fazemos
+
+```
+$ git reset --soft b240d3c43a
+```
+
+Verificando os **commits** é possível perceber o deslocamento do ponteiro **head** para onde queríamos.
+
+![ponteiro head reposicionado](img/p0016-13.png)
+
+Verificando o **estado do Git**, podemos ver que os dois arquivos que foram inseridos nos **commits** posteriores ao nosso **head atual** aparecem como novos arquivos no **index**.
+
+![novos arquivos no index após o reset soft](img/p0016-14.png)
+
+No log anterior (antes do **reset soft**), tínhamos
+
+![commits onde os arquivos foram inseridos](img/p0016-15.png)
+
+No fluxo atual do git, temos
+
+![fluxo do git após o reset soft](img/p0016-16.png)
+
+Aqui é importante notar que o área **working directory** não foi alterada.
+
+Ou seja, o arquivo **comite_etica_inline.html** não voltou a ter a parte que retiramos dele, embora tenhamos voltado a um **commit** anterior a essa retirada.
+
+![arquivo não voltou ao estado anterior](img/p0016-17.png)
+
+Confirmando que o comando ```reset --soft``` não interfere no **working directory**.
+
+E embora ele adicione os arquivos que receberam algum **commit** anteriormente ao **index**, se houver algum arquivo no **index** antes do comando ```reset --soft```, esse arquivo é mantido.
+
+Exemplo:
+
+![exemplo de um arquivo no index antes do reset soft](img/p0016-18.png)
+
+Esse comando é muito usado quando você fez uma sequência de **commits** repetitivos ou com diversas e pequenas alterações que poderiam ser resumidas em um único **commit**.
+
+## Modo de usar o reset: hard
+
+A principal diferença entre os comandos ```reset --soft``` e ```reset --hard``` é a interferência no **working directory** e no **index**. 
+
+Esse comando é usado em casos em que você bagunçou o código e precisa desfazer tudo o que fez. Porém é preciso ter cuidado com esse ele, pois se você apagar algum dado que não tinha intenção corre o risco de não conseguir recuperá-lo.
+
+Para usar o comando, digite
+
+```
+$ git reset --hard <chave_do_commit>
+```
+
+Exemplo:
+
+Temos os seguintes arquivos no diretório de um projeto,
+
+![arquivos do projeto](img/p0016-19.png)
+
+Os **commits** feitos até agora são,
+
+![commits do projeto](img/p0016-20.png)
+
+E temos um arquivo no **index**, esperando pelo **commit**.
+
+![arquivo no index](img/p0016-21.png)
+
+Vamos deslocar o ponteiro **head** para o mesmo **commit** que usamos no exemplo anterior, porém agora usando a **flag hard**.
+
+```
+$ git reset --hard b240d3c43a
+```
+
+Como podemos ver, não temos mais os arquivos **comite_etica_inline.html**, **comite_etica.js** e **mobile.css**. E o **index** está vazio.
+
+![após uso do reset hard](img/p0016-22.png)
+
+Sendo assim, podemos perceber que tanto o **working directory** quanto o **index** sofreram alterações.
+
+
+## Usando o HEAD no lugar da chave do commit
+
+É possível substituir a **chave de um commit**, nos três modos de usar o reset, pelo próprio ponteiro **head** e assim movê-lo para o **commit** desejado.
+
+```
+$ git reset --mixed HEAD~<n>
+```
+
+```
+$ git reset --soft HEAD~<n>
+```
+
+```
+$ git reset --hard HEAD~<n>
+```
+
+- substitua o **n** por um número (sem os sinais **< e >**) para indicar quantos **commits** atrás o ponteiro **head** precisa voltar.
+
+Exemplo:
+
+```
+$ git reset HEAD~3
+```
+
+Voltei o ponteiro **head** para três **commits** anteriores ao meu último. 
+
+> lembrando que, como não usei nenhuma flag nesse exemplo, o modo usado aqui foi o padrão, ou seja, o **mixed**.
+
+
+## Resumo dos modos do reset
+
+De maneira resumida, temos:
+
+- **Soft**: altera o ponteiro **head**.
+- **Mixed**: altera o ponteiro **head** e o **index**.
+- **Hard**: altera o ponteiro **head**, o **index** e o **working directory**.
+
+![resumo dos modos do reset](img/p0016-23.png)
+
+tags: 
