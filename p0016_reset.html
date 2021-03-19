@@ -32,10 +32,7 @@
                 </p>
                 <img class="fluxo-git" src="img/p0016-0.png" alt="arquivos no index">
                 <p>
-                    Lembrando que os arquivos que estão no <strong>index</strong> são aqueles em que foram usados o comando <code class="caixa-codigo-inline">git add</code>, mas que ainda não receberam um <strong>commit</strong>.
-                </p>
-                <p>
-                    <a class="link-artigo" href="p0001_add.html">Clique aqui</a>, caso precise saber mais sobre o comando add do Git.
+                    Lembrando que os arquivos que estão no <strong>index</strong> são aqueles em que foram usados o comando <strong><a class="link-artigo" href="p0001_add.html">git add</a></strong>, mas que ainda não receberam um <strong>commit</strong>.
                 </p>
                 <p>
                     Sendo assim, usamos:
@@ -84,7 +81,83 @@
                 </code>
                 <img class="exemplo" src="img/p0016-5.png" alt="retomando o arquivo para o working directory">
                 <img class="fluxo-git" src="img/p0016-6.png" alt="fluxo do arquivo retornando para o working directory">
-
+                <h2>
+                    Modo de usar o reset: soft
+                </h2>
+                <p>
+                    Esse modo de usar o comando reset serve apenas para alterar o ponteiro <strong>head</strong>:
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --soft &lt;chave_do_commit&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        O <strong>HEAD</strong> é um ponteiro no branch que normalmente aponta para o último commit feito.
+                    </li>
+                </ul>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Tenho os seguintes commits no meu projeto:
+                </p>
+                <img class="exemplo" src="img/p0016-7.png" alt="retorno do comando git log">
+                <img class="fluxo-git" src="img/p0016-8.png" alt="commits no fluxo do git">
+                <img class="fluxo-git" src="img/p0016-9.png" alt="selecionando commit">
+                <p>
+                    Agora, atenção ao arquivo <strong>comite_etica_inline.html</strong> que estava na seguinte situação no <strong>commit 669629</strong>.
+                </p>
+                <img class="exemplo" src="img/p0016-10.png" alt="arquivo no commit 669629">
+                <p>
+                    E passou para a situação abaixo no <strong>commit 9e8cf9</strong>
+                </p>
+                <img class="exemplo" src="img/p0016-11.png" alt="commit 9e8cf9">
+                <p>
+                    Vamos voltar o ponteiro <strong>head</strong> ao commit selecionado na imagem abaixo, pois pretendo <strong>refazer os commits</strong> que estão acima deste, sem de fato, mudar o projeto e tudo o que foi feito até agora.
+                </p>
+                <img class="exemplo" src="img/p0016-12.png" alt="selecionando o commit">
+                <p>
+                    Sendo assim, fazemos
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --soft b240d3c43a
+                </code>
+                <p>
+                    Verificando os <strong>commits</strong> é possível perceber o deslocamento do ponteiro <strong>head</strong> para onde queríamos.
+                </p>
+                <img class="exemplo" src="img/p0016-13.png" alt="ponteiro head reposicionado">
+                <p>
+                    Verificando o <strong>estado do Git</strong>, podemos ver que os dois arquivos que foram inseridos nos <strong>commits</strong> posteriores ao nosso <strong>head atual</strong> aparecem como novos arquivos no <strong>index</strong>.
+                </p>
+                <img class="exemplo" src="img/p0016-14.png" alt="novos arquivos no index após o reset soft">
+                <p>
+                    No log anterior (antes do <strong>reset soft</strong>), tínhamos
+                </p>
+                <img class="exemplo" src="img/p0016-15.png" alt="commits onde os arquivos foram inseridos">
+                <p>
+                    No fluxo atual do git, temos
+                </p>
+                <img class="fluxo-git" src="img/p0016-16.png" alt="fluxo do git após o reset soft">
+                <p>
+                    Aqui é importante notar que o área <strong>working directory</strong> não foi alterada.
+                </p>
+                <p>
+                    Ou seja, o arquivo <strong>comite_etica_inline.html</strong> não voltou a ter a parte que retiramos dele, embora tenhamos voltado a um <strong>commit</strong> anterior a essa retirada.
+                </p>
+                <img class="exemplo" src="img/p0016-17.png" alt="arquivo não voltou ao estado anterior">
+                <p>
+                    Confirmando que o comando <code class="caixa-codigo-inline">reset --soft</code> não interfere no <strong>working directory</strong>.
+                </p>
+                <p>
+                    E embora ele adicione os arquivos que receberam algum <strong>commit</strong> anteriormente ao <strong>index</strong>, se houver algum arquivo no <strong>index</strong> antes do comando <code class="caixa-codigo-inline">reset --soft</code>, esse arquivo é mantido.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0016-18.png" alt="exemplo de um arquivo no index antes do reset soft">
+                <p>
+                    Esse comando é muito usado quando você fez uma sequência de <strong>commits</strong> repetitivos ou com diversas e pequenas alterações que poderiam ser resumidas em um único <strong>commit</strong>.
+                </p>
 
             </article>
         </div>
@@ -92,77 +165,6 @@
     </body>
 </html>
 
-
-
-## Modo de usar o reset: soft
-
-Esse modo de usar o comando reset serve apenas para alterar o ponteiro **head**:
-
-```
-$ git reset --soft <chave_do_commit>
-```
-
-> O **HEAD** é um ponteiro no branch que normalmente aponta para o último commit feito.
-
-Exemplo:
-
-Tenho os seguintes commits no meu projeto:
-
-![retorno do comando git log](img/p0016-7.png)
-
-![commits no fluxo do git](img/p0016-8.png)
-
-![selecionando commit](img/p0016-9.png)
-
-Agora, atenção ao arquivo **comite_etica_inline.html** que estava na seguinte situação no **commit 669629**.
-
-![arquivo no commit 669629](img/p0016-10.png)
-
-E passou para a situação abaixo no **commit 9e8cf9**
-
-![commit 9e8cf9](img/p0016-11.png)
-
-Vamos voltar o ponteiro **head** ao commit selecionado na imagem abaixo, pois pretendo **refazer os commits** que estão acima deste, sem de fato, mudar o projeto e tudo o que foi feito até agora.
-
-![selecionando o commit](img/p0016-12.png)
-
-Sendo assim, fazemos
-
-```
-$ git reset --soft b240d3c43a
-```
-
-Verificando os **commits** é possível perceber o deslocamento do ponteiro **head** para onde queríamos.
-
-![ponteiro head reposicionado](img/p0016-13.png)
-
-Verificando o **estado do Git**, podemos ver que os dois arquivos que foram inseridos nos **commits** posteriores ao nosso **head atual** aparecem como novos arquivos no **index**.
-
-![novos arquivos no index após o reset soft](img/p0016-14.png)
-
-No log anterior (antes do **reset soft**), tínhamos
-
-![commits onde os arquivos foram inseridos](img/p0016-15.png)
-
-No fluxo atual do git, temos
-
-![fluxo do git após o reset soft](img/p0016-16.png)
-
-Aqui é importante notar que o área **working directory** não foi alterada.
-
-Ou seja, o arquivo **comite_etica_inline.html** não voltou a ter a parte que retiramos dele, embora tenhamos voltado a um **commit** anterior a essa retirada.
-
-![arquivo não voltou ao estado anterior](img/p0016-17.png)
-
-Confirmando que o comando ```reset --soft``` não interfere no **working directory**.
-
-E embora ele adicione os arquivos que receberam algum **commit** anteriormente ao **index**, se houver algum arquivo no **index** antes do comando ```reset --soft```, esse arquivo é mantido.
-
-Exemplo:
-
-![exemplo de um arquivo no index antes do reset soft](img/p0016-18.png)
-
-Esse comando é muito usado quando você fez uma sequência de **commits** repetitivos ou com diversas e pequenas alterações que poderiam ser resumidas em um único **commit**.
 
 ## Modo de usar o reset: hard
 
