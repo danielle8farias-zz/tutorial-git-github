@@ -158,52 +158,55 @@
                 <p>
                     Esse comando é muito usado quando você fez uma sequência de <strong>commits</strong> repetitivos ou com diversas e pequenas alterações que poderiam ser resumidas em um único <strong>commit</strong>.
                 </p>
+                <h2>
+                    Modo de usar o reset: hard
+                </h2>
+                <p>
+                    A principal diferença entre os comandos <code class="caixa-codigo-inline">reset --soft</code> e <code class="caixa-codigo-inline">reset --hard</code> é a interferência no <strong>working directory</strong> e no <strong>index</strong>.
+                </p>
+                <p>
+                    Esse comando é usado em casos em que você bagunçou o código e precisa desfazer tudo o que fez. Porém é preciso ter cuidado com esse ele, pois se você apagar algum dado que não tinha intenção corre o risco de não conseguir recuperá-lo.
+                </p>
+                <p>
+                    Para usar o comando, digite
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --hard &lt;chave_do_commit&gt;
+                </code>
+                <p>
+                    Exemplo:
+                </p>
+                <p>
+                    Temos os seguintes arquivos no diretório de um projeto,
+                </p>
+                <img class="exemplo" src="img/p0016-19.png" alt="arquivos do projeto">
+                <p>
+                    Os <strong>commits</strong> feitos até agora são,
+                </p>
+                <img class="exemplo" src="img/p0016-20.png" alt="commits do projeto">
+                <p>
+                    E temos um arquivo no <strong>index</strong>, esperando pelo <strong>commit</strong>.
+                </p>
+                <img class="exemplo" src="img/p0016-21.png" alt="arquivo no index">
+                <p>
+                    Vamos deslocar o ponteiro <strong>head</strong> para o mesmo <strong>commit</strong> que usamos no exemplo anterior, porém agora usando a <strong>flag hard</strong>.
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --hard b240d3c43a
+                </code>
+                <p>
+                    Como podemos ver, não temos mais os arquivos <strong>comite_etica_inline.html</strong>, <strong>comite_etica.js</strong> e <strong>mobile.css</strong>. E o <strong>index</strong> está vazio.
+                </p>
+                <img class="exemplo" src="img/p0016-22.png" alt="após uso do reset hard">
+                <p>
+                    Sendo assim, podemos perceber que tanto o <strong>working directory</strong> quanto o <strong>index</strong> sofreram alterações.
+                </p>
 
             </article>
         </div>
 
     </body>
 </html>
-
-
-## Modo de usar o reset: hard
-
-A principal diferença entre os comandos ```reset --soft``` e ```reset --hard``` é a interferência no **working directory** e no **index**. 
-
-Esse comando é usado em casos em que você bagunçou o código e precisa desfazer tudo o que fez. Porém é preciso ter cuidado com esse ele, pois se você apagar algum dado que não tinha intenção corre o risco de não conseguir recuperá-lo.
-
-Para usar o comando, digite
-
-```
-$ git reset --hard <chave_do_commit>
-```
-
-Exemplo:
-
-Temos os seguintes arquivos no diretório de um projeto,
-
-![arquivos do projeto](img/p0016-19.png)
-
-Os **commits** feitos até agora são,
-
-![commits do projeto](img/p0016-20.png)
-
-E temos um arquivo no **index**, esperando pelo **commit**.
-
-![arquivo no index](img/p0016-21.png)
-
-Vamos deslocar o ponteiro **head** para o mesmo **commit** que usamos no exemplo anterior, porém agora usando a **flag hard**.
-
-```
-$ git reset --hard b240d3c43a
-```
-
-Como podemos ver, não temos mais os arquivos **comite_etica_inline.html**, **comite_etica.js** e **mobile.css**. E o **index** está vazio.
-
-![após uso do reset hard](img/p0016-22.png)
-
-Sendo assim, podemos perceber que tanto o **working directory** quanto o **index** sofreram alterações.
-
 
 ## Usando o HEAD no lugar da chave do commit
 
