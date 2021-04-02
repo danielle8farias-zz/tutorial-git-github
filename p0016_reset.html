@@ -45,7 +45,7 @@
                         <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
                     </li>
                     <li>
-                        digite o nome do arquivo sem os sinais <strong>&lt; &gt;</strong>.
+                        digite o nome do arquivo sem os sinais <strong>&lt; e &gt;</strong>.
                     </li>
                 </ul>
                 <p>
@@ -201,50 +201,81 @@
                 <p>
                     Sendo assim, podemos perceber que tanto o <strong>working directory</strong> quanto o <strong>index</strong> sofreram alterações.
                 </p>
-
+                <h2>
+                    Usando o HEAD no lugar da chave do commit
+                </h2>
+                <p>
+                    É possível substituir a <strong>chave de um commit</strong>, nos três modos de usar o reset, pelo próprio ponteiro <strong>head</strong> e assim movê-lo para o <strong>commit</strong> desejado.
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset --mixed HEAD~&lt;n&gt;
+                </code>
+                <br/>
+                <code class="caixa-codigo">
+                    $ git reset --soft HEAD~&lt;n&gt;
+                </code>
+                <br/>
+                <code class="caixa-codigo">
+                    $ git reset --hard HEAD~&lt;n&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        substitua o <strong>n</strong> por um número (sem os sinais <strong>&lt; e &gt;</strong>) para indicar quantos <strong>commits</strong> atrás o ponteiro <strong>head</strong> precisa voltar.
+                    </li>
+                </ul>
+                <p>
+                    Exemplo:
+                </p>
+                <code class="caixa-codigo">
+                    $ git reset HEAD~3
+                </code>
+                <p>
+                    Voltei o ponteiro <strong>head</strong> para três <strong>commits</strong> anteriores ao meu último. 
+                </p>
+                <p>
+                    <em>
+                        lembrando que, como não usei nenhuma flag nesse exemplo, o modo usado aqui foi o padrão, ou seja, o <strong>mixed</strong>.
+                    </em>
+                </p>
+                <h2>
+                    Resumo dos modos do reset
+                </h2>
+                <p>
+                    De maneira resumida, temos:
+                </p>
+                <ul class="observacao">
+                    <li>
+                        <strong>Soft</strong>: altera o ponteiro <strong>head</strong>.
+                    </li>
+                    <li>
+                        <strong>Mixed</strong>: altera o ponteiro <strong>head</strong> e o <strong>index</strong>.
+                    </li>
+                    <li>
+                        <strong>Hard</strong>: altera o ponteiro <strong>head</strong>, o <strong>index</strong> e o <strong>working directory</strong>.
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0016-23.png" alt="resumo dos modos do reset">
             </article>
+            <nav>
+                <div class="nav-esquerda">
+                    <a href="p0015_checkout.html">
+                        &lt; anterior
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html">
+                        voltar ao índice
+                    </a>
+                </div>
+                <div class="nav-direita">
+                    <a href="p0017_revert_commit.html">
+                        próximo &gt;
+                    </a>
+                </div>
+            </nav>
+            <footer>
+                    by danielle8farias
+            </footer>
         </div>
-
     </body>
 </html>
-
-## Usando o HEAD no lugar da chave do commit
-
-É possível substituir a **chave de um commit**, nos três modos de usar o reset, pelo próprio ponteiro **head** e assim movê-lo para o **commit** desejado.
-
-```
-$ git reset --mixed HEAD~<n>
-```
-
-```
-$ git reset --soft HEAD~<n>
-```
-
-```
-$ git reset --hard HEAD~<n>
-```
-
-- substitua o **n** por um número (sem os sinais **< e >**) para indicar quantos **commits** atrás o ponteiro **head** precisa voltar.
-
-Exemplo:
-
-```
-$ git reset HEAD~3
-```
-
-Voltei o ponteiro **head** para três **commits** anteriores ao meu último. 
-
-> lembrando que, como não usei nenhuma flag nesse exemplo, o modo usado aqui foi o padrão, ou seja, o **mixed**.
-
-
-## Resumo dos modos do reset
-
-De maneira resumida, temos:
-
-- **Soft**: altera o ponteiro **head**.
-- **Mixed**: altera o ponteiro **head** e o **index**.
-- **Hard**: altera o ponteiro **head**, o **index** e o **working directory**.
-
-![resumo dos modos do reset](img/p0016-23.png)
-
-tags: 
