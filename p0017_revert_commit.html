@@ -13,82 +13,128 @@
         <title>git revert</title>
     </head>
     <body>
-
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>&gt;_ git revert: Desfazendo commits</h1>
+            </div>
+            <article class="caixa-texto">
+                <p>
+                    O que esse comando faz é basicamente desfazer tudo aquilo que foi feito dentro de um determinado <strong>commit</strong> (ou dentro de um intervalo de commits). O que acontece aqui, na verdade, é que o Git cria um novo commit que registra o que foi desfeito.
+                </p>
+                <p>
+                    Por exemplo: se em um commit você adicionou um arquivo, o <strong>revert</strong> remove; se o commit editou algumas linhas, o <strong>revert</strong> volta essas linhas ao que eram antes da edição e assim por diante.
+                </p>
+                <p>
+                    Vamos supor que temos a seguinte situação:
+                </p>
+                <p>
+                    Abaixo temos um log dos commits feitos até o momento num repositório. Foram 4 até agora.
+                </p>
+                <img class="exemplo" src="img/p0017-0.png" alt="commits feitos até então">
+                <p>
+                    E temos o seguinte arquivo HTML.
+                </p>
+                <img class="exemplo" src="img/p0017-1.png" alt="arquivo index antes do commando revert">
+                <p>
+                    Se queremos reverter para a situação de antes de adicionar os meta dados (voltar a situação do commit 3), basta usar o seguinte comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git revert c2f6c649
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        <strong>c2f6c649</strong> é a chave do nosso último commit. No seu projeto ela será diferente da mostrada aqui.
+                    </li>
+                </ul>
+                <p>
+                    Note que devemos apontar exatamente para o <strong>commit</strong> que desejamos reverter e não um anterior a ele.
+                </p>
+                <p>
+                    Em seguida o <strong>Git</strong> abrirá o editor que foi selecionado como padrão para editar o <strong>commit</strong> de reversão.
+                </p>
+                <p>
+                    Aqui você grava a mensagem sobre a sua reversão.
+                </p>
+                <img class="exemplo" src="img/p0017-2.png" alt="editando a reversão do commit">
+                <p>
+                    Teremos como retorno a seguinte mensagem:
+                </p>
+                <code class="caixa-codigo">
+                    [main 0967249] Revert "adicionando meta dados"
+                </code>
+                <code class="caixa-codigo">
+                    1 file changed, 1 deletion(-)
+                </code>
+                <p>
+                    Caso seja necessário realizar ajustes e correções nos arquivos durante o processo de reversão, será necessário utilizar o comando <strong><a class="link-artigo" href="p0001_add.html">git add</a></strong> após a edição desses arquivos e em seguida o comando
+                </p>
+                <code class="caixa-codigo">
+                    $ git revert --continue
+                </code>
+                <p>
+                    Para que o processo de reversão seja finalizado.
+                </p>
+                <h2>
+                    Usando o HEAD para reverter commits
+                </h2>
+                <p>
+                    Também é possível utilizar o <strong>revert</strong> assim:
+                </p>
+                <code class="caixa-codigo">
+                    $ git revert HEAD~&lt;número_a_partir_de_1&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        substitua o <strong>número_a_partir_de_1</strong> por um número, sendo o número 1 o último <strong>commit</strong>, o 2 o penúltimo, o 3 o antepenúltimo e assim por diante; sem os sinais de <strong>&lt; e &gt;</strong>.
+                    </li>
+                </ul>
+                <h2>
+                    Cancelando a reversão
+                </h2>
+                <p>
+                    Caso haja algum erro durante a reversão, é possível cancelar a operação com o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git revert --abort
+                </code>
+                <p>
+                    A falha da reversão ocorre quanto a operação afeta um outro commit posterior ao ponto da reversão.
+                </p>
+                <h2>
+                    Atenção!
+                </h2>
+                <ul class="observacao">
+                    <li>
+                        O comando de reversão deve ser executado com o index limpo, ou seja, após os commits terem sido feitos.
+                    </li>
+                    <li>
+                        Reverta commits apenas se for extremamente necessário.
+                    </li>
+                </ul>
+            </article>
+            <nav>
+                <div class="nav-esquerda">
+                    <a href="p0016_reset.html">
+                        &lt; anterior
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html">
+                        voltar ao índice
+                    </a>
+                </div>
+                <div class="nav-direita">
+                    <a href="#">
+                        próximo &gt;
+                    </a>
+                </div>
+            </nav>
+            <footer>
+                    by danielle8farias
+            </footer>
+        </div>
     </body>
 </html>
-
-# git revert: Desfazendo commits
-
-
-O que esse comando faz é basicamente desfazer tudo aquilo que foi feito dentro de um determinado **commit** (ou dentro de um intervalo de commits). O que acontece aqui, na verdade, é que o Git cria um novo commit que registra o que foi desfeito.
-
-Por exemplo: se em um commit você adicionou um arquivo, o **revert** remove; se o commit editou algumas linhas, o **revert** volta essas linhas ao que eram antes da edição e assim por diante.
-
-Vamos supor que temos a seguinte situação:
-
-Abaixo temos um log dos commits feitos até o momento num repositório. Foram 4 até agora.
-
-![commits feitos até então](img/p0017-0.png)
-
-E temos o seguinte arquivo HTML.
-
-![arquivo index antes do commando revert](img/p0017-1.png)
-
-Se queremos reverter para a situação de antes de adicionar os meta dados (voltar a situação do commit 3), basta usar o seguinte comando:
-
-```
-$ git revert c2f6c649
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- **c2f6c649** é a chave do nosso último commit. No seu projeto ela será diferente da mostrada aqui.
-
-Note que devemos apontar exatamente para o **commit** que desejamos reverter e não um anterior a ele.
-
-Em seguida o **Git** abrirá o editor que foi selecionado como padrão para editar o **commit** de reversão.
-
-Aqui você grava a mensagem sobre a sua reversão.
-
-![editando a reversão do commit](img/p0017-2.png)
-
-Teremos como retorno a seguinte mensagem:
-
-```
-[main 0967249] Revert "adicionando meta dados"
- 1 file changed, 1 deletion(-)
-```
-
-Caso seja necessário realizar ajustes e correções nos arquivos durante o processo de reversão, será necessário utilizar o comando **[git add](p0001_add.md)** após a edição desses arquivos e em seguida o comando
-
-```
-$ git revert --continue
-```
-
-Para que o processo de reversão seja finalizado.
-
-## Usando o HEAD para reverter commits
-
-Também é possível utilizar o **revert** assim:
-
-```
-$git revert HEAD~<número_a_partir_de_1>
-```
-
-- substitua o **número_a_partir_de_1** por um número, sendo o número 1 o último **commit**, o 2 o penúltimo, o 3 o antepenúltimo e assim por diante; sem os sinais de **< e >**.
-
-## Cancelando a reversão
-
-Caso haja algum erro durante a reversão, é possível cancelar a operação com o comando:
-
-```
-$ git revert --abort
-```
-
-A falha da reversão ocorre quanto a operação afeta um outro commit posterior ao ponto da reversão.
-
-## Atenção!
-
-- O comando de reversão deve ser executado com o index limpo, ou seja, após os commits terem sido feitos. 
-- Reverta commits apenas se for extremamente necessário.
-
-tags: git, 
