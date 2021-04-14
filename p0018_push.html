@@ -1,94 +1,161 @@
-# git push: Usando o Github e enviando um projeto local para o repositório remoto
-
-
-Acesse sua conta no [GitHub](https://github.com/). 
-
-> Caso ainda não tenha, basta criá-la (é fácil e rápido).
-
-Clique o sinal de **mais** para abrir o menu e em seguida em **New repository**.
-
-![criando novo repositório no GitHub](img/p0018-0.png)
-
-Dê o nome de sua preferência, além da descrição e indique se seu repositório será público ou privado.
-
-![criando repositório](img/p0018-1.png)
-
-Para finalizar, clique em **Create repository**.
-
-Em seguida aparecerá uma tela com três opções:
-
-![tela de configuração rápida](img/p0018-2.png)
-
-- A primeira diz respeito a crianção de um **novo repositório** (inclui a inicialização do Git no diretório).
-
-![primeira opção](img/p0018-3.png)
-
-- A segunda diz respeito a um **repositório já existente** e que desejo colocar no GitHub (é a situação que irei utilizar).
-
-![segunda opção](img/p0018-4.png)
-
-- A terceira diz respeito a **importação** de um código de outro repositório.
-
-![terceira opção](img/p0018-5.png)
-
-Sendo assim, dentro da pasta do nosso projeto, digitamos o comando:
-
-```
-$ git remote add origin <link_para_o_repositório_do_seu_projeto>
-```
-
-- **$** indica que você deve usar o **usuário comum** para fazer essa operação.
-- link para o repositório do seu projeto sem os sinais **< e >**.
-
-para fazer a ligação com o repositório remoto.
-
-No caso do exemplo que estamos usando, fazemos:
-
-```
-$ git remote add origin https://github.com/danielle8farias/cautious-waffle.git
-```
-
-Logo após
-
-```
-$ git push -u origin main
-```
-
-- Isso significa as modificações no **branch(ramo)** local, denominado **main** será **empurrado(push)** para o remoto chamado **origin**. 
-- O **-u** é uma atalho para o comando **--set-upstream**; ficando definido esse **branch** como uso padrão até que você o modifique novamente. Das próximas vezes em que você precisar **empurrar** seu código para o **GitHub** basta usar o comando **git push** para esse mesmo **branch**.
-
-Em seguida, será pedido seu **nome de usuária** e sua **senha do GitHub**:
-
-![entrando com usuário e senha do GitHub](img/p0018-6.png)
-
-Se tudo estiver certo, o retorno será algo similar a:
-
-![retorno do comando push](img/p0018-7.png)
-
-Fazendo a associação entre os branchs **master(local)** e **origin(remoto)**.
-
-## Verificando o repositório remoto
-
-Caso precise verificar se há um **repositório remoto** em algum diretório local, digite:
-
-```
-$ git remote
-```
-
-O **retorno** será o nome do **branch remoto**.
-
-Exemplo:
-
-![exibindo branch remoto](img/p0018-8.png)
-
-Para saber mais detalhes desse repositório remoto, digite no terminal:
-
-```
-$ git remote -v
-```
-
-E o retorno será o link para o repositório remoto.
-
-![link para o repositório remoto](img/p0018-9.png)
-
-tags: git, github, repositorio, remoto, push
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="icon" href="img/git_icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <meta name="keywords" content="danielle8farias, linux, tutorial, git, github, repositorio, remoto, push">
+        <title>git push</title>
+    </head>
+    <body>
+        <div class="corpo-central">
+            <div class="titulo">
+                <h1>
+                    &gt;_ git push: Usando o Github e enviando um projeto local para o repositório remoto
+                </h1>
+            </div>
+            <article class="caixa-texto">
+                <p>
+                    Acesse sua conta no <strong><a class="link-artigo" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></strong>.
+                </p>
+                <ul class="observacao">
+                    <li>
+                        Caso ainda não tenha, basta criá-la (é fácil e rápido).
+                    </li>
+                </ul>
+                <p>
+                    Clique o sinal de <strong>mais</strong> para abrir o menu e em seguida em <strong>New repository</strong>.
+                </p>
+                <img class="exemplo" src="img/p0018-0.png" alt="criando novo repositório no GitHub">
+                <p>
+                    Dê o nome de sua preferência, além da descrição e indique se seu repositório será público ou privado.
+                </p>
+                <img class="exemplo" src="img/p0018-1.png" alt="criando repositório">
+                <p>
+                    Para finalizar, clique em <strong>Create repository</strong>.
+                </p>
+                <p>
+                    Em seguida aparecerá uma tela com três opções:
+                </p>
+                <img class="exemplo" src="img/p0018-2.png" alt="tela de configuração rápida">
+                <ul class="observacao">
+                    <li>
+                        A primeira diz respeito a crianção de um <strong>novo repositório</strong> (inclui a inicialização do Git no diretório).
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0018-3.png" alt="primeira opção">
+                <ul class="observacao">
+                    <li>
+                        A segunda diz respeito a um <strong>repositório já existente</strong> e que desejo colocar no GitHub (é a situação que irei utilizar).
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0018-4.png" alt="segunda opção">
+                <ul class="observacao">
+                    <li>
+                        A terceira diz respeito a <strong>importação</strong> de um código de outro repositório.
+                    </li>
+                </ul>
+                <img class="exemplo" src="img/p0018-5.png" alt="terceira opção">
+                <p>
+                    Sendo assim, dentro da pasta do nosso projeto, digitamos o comando:
+                </p>
+                <code class="caixa-codigo">
+                    $ git remote add origin &lt;link_para_o_repositório_do_seu_projeto&gt;
+                </code>
+                <ul class="observacao">
+                    <li>
+                        <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
+                    </li>
+                    <li>
+                        link para o repositório do seu projeto sem os sinais <strong>&lt; e &gt;</strong>.
+                    </li>
+                </ul>
+                <p>
+                    para fazer a ligação com o repositório remoto.
+                </p>
+                <p>
+                    No caso do exemplo que estamos usando, fazemos:
+                </p>
+                <code class="caixa-codigo">
+                    $ git remote add origin https://github.com/danielle8farias/cautious-waffle.git
+                </code>
+                <p>
+                    Logo após
+                </p>
+                <code class="caixa-codigo">
+                    $ git push -u origin main
+                </code>
+                <ul class="observacao">
+                    <li>
+                        Isso significa as modificações no <strong>branch(ramo)</strong> local, denominado <strong>main</strong> será <strong>empurrado(push)</strong> para o remoto chamado <strong>origin</strong>. 
+                    </li>
+                    <li>
+                        O <strong>-u</strong> é uma atalho para o comando <strong>--set-upstream</strong>; ficando definido esse <strong>branch</strong> como uso padrão até que você o modifique novamente. Das próximas vezes em que você precisar <strong>empurrar</strong> seu código para o <strong>GitHub</strong> basta usar o comando <strong>git push</strong> para esse mesmo <strong>branch</strong>.
+                    </li>
+                </ul>
+                <p>
+                    Em seguida, será pedido seu <strong>nome de usuária</strong> e sua <strong>senha do GitHub</strong>:
+                </p>
+                <img class="exemplo" src="img/p0018-6.png" alt="entrando com usuário e senha do GitHub">
+                <p>
+                    Se tudo estiver certo, o retorno será algo similar a:
+                </p>
+                <img class="exemplo" src="img/p0018-7.png" alt="retorno do comando push">
+                <p>
+                    Fazendo a associação entre os branchs <strong>master(local)</strong> e <strong>origin(remoto)</strong>.
+                </p>
+                <h2>
+                    Verificando o repositório remoto
+                </h2>
+                <p>
+                    Caso precise verificar se há um <strong>repositório remoto</strong> em algum diretório local, digite:
+                </p>
+                <code class="caixa-codigo">
+                    $ git remote
+                </code>
+                <p>
+                    O <strong>retorno</strong> será o nome do <strong>branch remoto</strong>.
+                </p>
+                <p>
+                    Exemplo:
+                </p>
+                <img class="exemplo" src="img/p0018-8.png" alt="exibindo branch remoto">
+                <p>
+                    Para saber mais detalhes desse repositório remoto, digite no terminal:
+                </p>
+                <code class="caixa-codigo">
+                    $ git remote -v
+                </code>
+                <p>
+                    E o retorno será o link para o repositório remoto.
+                </p>
+                <img class="exemplo" src="img/p0018-9.png" alt="link para o repositório remoto">
+            </article>
+            <nav>
+                <div class="nav-esquerda">
+                    <a href="p0017_revert_commit.html">
+                        &lt; anterior
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html">
+                        voltar ao índice
+                    </a>
+                </div>
+                <div class="nav-direita">
+                    <a href="p0019_fetch.html">
+                        próximo &gt;
+                    </a>
+                </div>
+            </nav>
+            <footer>
+                    by danielle8farias
+            </footer>
+        </div>
+    </body>
+</html>
