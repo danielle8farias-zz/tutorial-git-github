@@ -18,17 +18,17 @@
             </div>
             <article class="caixa-texto">
                 <p>
-                    Para apagar um arquivo ou diretório no repositório Git, fazemos
+                    Para apagar um arquivo no repositório Git, fazemos
                 </p>
                 <code class="caixa-codigo">
-                    $ git rm &lt;nome_do _arquivo&gt;
+                    $ git rm &lt;nome do arquivo&gt;
                 </code>
                 <ul class="observacao">
                     <li>
                         <strong>$</strong> indica que você deve usar o <strong>usuário comum</strong> para fazer essa operação.
                     </li>
                     <li>
-                        <strong>sudo</strong> é o comando que dá permissões de <strong>super usuário</strong> temporariamente; assim é possível fazer a instalação de programas.
+                        <strong>rm</strong>, do inglês <em>remove</em>, para remover o arquivo.
                     </li>
                     <li>
                         digite o nome do arquivo sem os sinais sem os sinais <strong>&lt; &gt;</strong>
@@ -61,6 +61,12 @@
                 <p>
                     Em seguida, fazemos o <strong> <a href="p0004_commit.md"></a>commit</strong>.
                 </p>
+                <p>
+                    Para excluir uma <strong>pasta/diretório não vazio</strong>, basta incluir a flag <strong>-r</strong>, de recursividade, para incluir toda a árvore do diretório. Assim:
+                </p>
+                <code class="caixa-codigo">
+                    $ git rm -r &lt;nome do arquivo&gt;
+                </code>
             </article>
             <nav>
                 <div class="nav-esquerda">
